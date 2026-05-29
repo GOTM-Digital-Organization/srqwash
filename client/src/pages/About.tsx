@@ -248,14 +248,15 @@ export default function About() {
               <img
                 src="/manus-storage/owner-photo_01cb5149.webp"
                 alt="Owner of SRQ Wash"
-                className="rounded-2xl shadow-2xl w-full object-cover object-top h-[520px]"
+                className="rounded-2xl shadow-2xl w-full h-[520px]"
+                style={{ objectFit: 'contain', objectPosition: 'center', background: '#f1f5f9' }}
               />
               <div className="absolute -bottom-5 -right-5 bg-[#0EA5E9] text-white rounded-xl px-5 py-4 shadow-xl">
                 <div
                   className="text-3xl font-bold"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  Owner &amp; Operator
+                  Tom — Owner &amp; Operator
                 </div>
                 <div className="text-sm opacity-90" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                   SRQ Wash, Lakewood Ranch FL
@@ -268,29 +269,29 @@ export default function About() {
                 className="text-5xl lg:text-6xl text-[#111827] mb-6 leading-none"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
-                A Local You Can Trust
+                Hi, I'm Tom
               </h2>
               <p
                 className="text-gray-600 leading-relaxed mb-5 text-lg"
                 style={{ fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                SRQ Wash is owner-operated, which means when you hire us, you get the owner on the job — not a subcontractor or a crew you've never met. I personally oversee every project to make sure the work meets the standards I'd want for my own home.
+                SRQ Wash is owner-operated by Tom — which means when you hire us, you get the owner on the job. Not a subcontractor, not a crew you've never met. Tom personally oversees every project to make sure the work meets the standards he'd want for his own home.
               </p>
               <p
                 className="text-gray-600 leading-relaxed mb-5"
                 style={{ fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                I've been serving Lakewood Ranch, Sarasota, Venice, and Bradenton for over 5 years. I know these neighborhoods, I know the HOA expectations, and I know how Florida's climate affects your home's exterior. That local knowledge makes a real difference in the quality of results I deliver.
+                Tom has been serving Lakewood Ranch, Sarasota, Venice, and Bradenton for over 5 years. He knows these neighborhoods, the HOA expectations, and how Florida's climate affects your home's exterior. That local knowledge makes a real difference in the quality of results he delivers.
               </p>
               <p
                 className="text-gray-600 leading-relaxed mb-8"
                 style={{ fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                My goal is simple: leave every property cleaner than I found it, and every customer more satisfied than they expected. That's why 90% of my business comes from referrals and repeat customers.
+                Tom's goal is simple: leave every property cleaner than he found it, and every customer more satisfied than they expected. That's why 90% of his business comes from referrals and repeat customers.
               </p>
               <a href={`tel:${SITE.phoneCall}`} className="btn-orange">
                 <Phone size={16} />
-                Talk to the Owner Directly
+                Talk to Tom Directly
               </a>
             </div>
           </div>

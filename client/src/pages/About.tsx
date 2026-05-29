@@ -104,7 +104,7 @@ export default function About() {
             </div>
             <div className="relative">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/hero-pressure-wash-h5B6kYx39PPPvEhFPzciZQ.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/srqwash-hero-truck-F7KszAvTH6nxDDYo5ZSojL.webp"
                 alt="SRQ Wash professional pressure washing truck"
                 className="rounded-xl shadow-2xl w-full object-cover h-[480px]"
               />

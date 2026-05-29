@@ -77,7 +77,7 @@ export default function Home() {
         className="relative min-h-screen flex items-center"
         style={{
           backgroundImage:
-            "url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/hero-pressure-wash-h5B6kYx39PPPvEhFPzciZQ.webp)",
+            "url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/srqwash-hero-truck-F7KszAvTH6nxDDYo5ZSojL.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

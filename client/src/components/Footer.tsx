@@ -13,19 +13,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold"
-                style={{ backgroundColor: "oklch(0.62 0.2 220)", fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.1rem" }}
-              >
-                SRQ
-              </div>
-              <span
-                className="text-white font-bold text-xl"
-                style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}
-              >
-                SRQ WASH
-              </span>
+            <Link href="/" className="inline-flex mb-4">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/srqwash-logo-mDqoa6B8FmRjZTuyKBeBmy.webp"
+                alt="SRQ Wash Pressure Washing"
+                className="h-14 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
             </Link>
             <p className="text-sm text-gray-400 mb-5 leading-relaxed" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
               Lakewood Ranch's premier pressure washing company. Licensed, insured, and 5-star rated for residential and commercial exterior cleaning.

@@ -56,26 +56,13 @@ export default function Navbar() {
         <div className="container">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="flex items-center gap-2">
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white text-sm"
-                  style={{ backgroundColor: "oklch(0.62 0.2 220)", fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.1rem", letterSpacing: "0.05em" }}
-                >
-                  SRQ
-                </div>
-                <div>
-                  <div
-                    className="text-white font-bold leading-tight"
-                    style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.4rem", letterSpacing: "0.05em" }}
-                  >
-                    SRQ WASH
-                  </div>
-                  <div className="text-xs text-gray-300 leading-none" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                    Pressure Washing
-                  </div>
-                </div>
-              </div>
+            <Link href="/" className="flex items-center flex-shrink-0">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/srqwash-logo-mDqoa6B8FmRjZTuyKBeBmy.webp"
+                alt="SRQ Wash Pressure Washing"
+                className="h-12 lg:h-14 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
             </Link>
 
             {/* Desktop Nav */}

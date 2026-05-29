@@ -15,7 +15,7 @@ interface PageHeroProps {
 export default function PageHero({
   title,
   subtitle,
-  image = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/hero-pressure-wash-h5B6kYx39PPPvEhFPzciZQ.webp",
+  image = "/manus-storage/truck-trailer-1_7192309a.webp",
   breadcrumb,
   showCTA = true,
 }: PageHeroProps) {

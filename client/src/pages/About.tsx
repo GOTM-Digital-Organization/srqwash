@@ -104,8 +104,8 @@ export default function About() {
             </div>
             <div className="relative">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/srqwash-hero-truck-F7KszAvTH6nxDDYo5ZSojL.webp"
-                alt="SRQ Wash professional pressure washing truck"
+                src="/manus-storage/truck-trailer-1_7192309a.webp"
+                alt="SRQ Wash truck and trailer at a Lakewood Ranch home"
                 className="rounded-xl shadow-2xl w-full object-cover h-[480px]"
               />
               <div className="absolute -bottom-6 -right-6 bg-[#F97316] text-white rounded-xl p-5 shadow-xl">
@@ -235,6 +235,63 @@ export default function About() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── OWNER / MEET THE TEAM ── */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <div className="relative">
+              <img
+                src="/manus-storage/owner-photo_01cb5149.webp"
+                alt="Owner of SRQ Wash"
+                className="rounded-2xl shadow-2xl w-full object-cover object-top h-[520px]"
+              />
+              <div className="absolute -bottom-5 -right-5 bg-[#0EA5E9] text-white rounded-xl px-5 py-4 shadow-xl">
+                <div
+                  className="text-3xl font-bold"
+                  style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                >
+                  Owner &amp; Operator
+                </div>
+                <div className="text-sm opacity-90" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                  SRQ Wash, Lakewood Ranch FL
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="section-label mb-4">Meet the Owner</p>
+              <h2
+                className="text-5xl lg:text-6xl text-[#111827] mb-6 leading-none"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              >
+                A Local You Can Trust
+              </h2>
+              <p
+                className="text-gray-600 leading-relaxed mb-5 text-lg"
+                style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+              >
+                SRQ Wash is owner-operated, which means when you hire us, you get the owner on the job — not a subcontractor or a crew you've never met. I personally oversee every project to make sure the work meets the standards I'd want for my own home.
+              </p>
+              <p
+                className="text-gray-600 leading-relaxed mb-5"
+                style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+              >
+                I've been serving Lakewood Ranch, Sarasota, Venice, and Bradenton for over 5 years. I know these neighborhoods, I know the HOA expectations, and I know how Florida's climate affects your home's exterior. That local knowledge makes a real difference in the quality of results I deliver.
+              </p>
+              <p
+                className="text-gray-600 leading-relaxed mb-8"
+                style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+              >
+                My goal is simple: leave every property cleaner than I found it, and every customer more satisfied than they expected. That's why 90% of my business comes from referrals and repeat customers.
+              </p>
+              <a href={`tel:${SITE.phoneCall}`} className="btn-orange">
+                <Phone size={16} />
+                Talk to the Owner Directly
+              </a>
             </div>
           </div>
         </div>

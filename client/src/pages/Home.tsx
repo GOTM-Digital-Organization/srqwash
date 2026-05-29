@@ -77,7 +77,7 @@ export default function Home() {
         className="relative min-h-screen flex items-center"
         style={{
           backgroundImage:
-            "url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/srqwash-hero-truck-F7KszAvTH6nxDDYo5ZSojL.webp)",
+            "url(/manus-storage/truck-trailer-1_7192309a.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -229,8 +229,8 @@ export default function Home() {
             </div>
             <div className="relative">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/house-washing-d8iTwVpg2DNLBPa4TF6qYx.webp"
-                alt="Professional house washing in Lakewood Ranch"
+                src="/manus-storage/truck-trailer-1_7192309a.webp"
+                alt="SRQ Wash truck and trailer at a Lakewood Ranch home"
                 className="rounded-xl shadow-2xl w-full object-cover h-[500px]"
               />
               {/* Floating badge */}
@@ -493,6 +493,51 @@ export default function Home() {
               Read All Reviews
               <ArrowRight size={16} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── REAL WORK GALLERY ── */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="section-label justify-center mb-4">Real Results</p>
+            <h2
+              className="text-5xl lg:text-6xl text-[#111827] mb-4"
+              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            >
+              Our Work Speaks for Itself
+            </h2>
+            <p
+              className="text-gray-600 text-lg max-w-2xl mx-auto"
+              style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+            >
+              Real photos from real jobs in Lakewood Ranch and Sarasota. No stock photos — just the results we deliver every day.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {[
+              { src: "/manus-storage/job-roof-cleaning-1_3cdf5e49.webp", alt: "Soft wash roof cleaning in progress, Lakewood Ranch" },
+              { src: "/manus-storage/job-roof-cleaning-2_c66b2d1d.webp", alt: "Roof cleaning with soft wash equipment, Sarasota" },
+              { src: "/manus-storage/job-roof-before-after-1_68f4e192.webp", alt: "Tile roof before and after soft wash cleaning" },
+              { src: "/manus-storage/job-roof-before-after-2_d8dd2e1a.webp", alt: "Roof cleaning before and after comparison" },
+              { src: "/manus-storage/job-roof-after-1_90c9f27b.webp", alt: "Clean tile roof after soft wash treatment" },
+              { src: "/manus-storage/job-roof-after-2_67294a74.webp", alt: "Restored roof tiles after professional cleaning" },
+              { src: "/manus-storage/truck-trailer-1_7192309a.webp", alt: "SRQ Wash truck and trailer at a Lakewood Ranch home" },
+              { src: "/manus-storage/trailer-closeup_8cbd8513.webp", alt: "SRQ Wash professional pressure washing trailer setup" },
+            ].map(({ src, alt }, i) => (
+              <div
+                key={i}
+                className="relative overflow-hidden rounded-xl aspect-square group cursor-pointer"
+              >
+                <img
+                  src={src}
+                  alt={alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
+              </div>
+            ))}
           </div>
         </div>
       </section>

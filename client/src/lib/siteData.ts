@@ -53,8 +53,7 @@ We follow ARMA (Asphalt Roofing Manufacturers Association) guidelines and use on
       "Eliminates algae, mold, lichen, and moss at the root",
       "Protects your home's curb appeal and resale value",
     ],
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/roof-cleaning-E5hFHyHQFJNnrFAnkehfGE.webp",
+    image: "/manus-storage/job-roof-cleaning-1_3cdf5e49.webp",
     metaTitle:
       "Roof Cleaning Lakewood Ranch & Sarasota | Safe Soft Wash | SRQ Wash",
     metaDescription:
@@ -78,8 +77,7 @@ We use a tailored approach for every home. Stucco and painted surfaces receive o
       "Improves curb appeal and maintains property value",
       "Helps maintain HOA compliance",
     ],
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/house-washing-d8iTwVpg2DNLBPa4TF6qYx.webp",
+    image: "/manus-storage/job-roof-cleaning-2_c66b2d1d.webp",
     metaTitle:
       "House Washing Lakewood Ranch & Sarasota | Exterior Cleaning | SRQ Wash",
     metaDescription:
@@ -103,8 +101,7 @@ We pre-treat oil stains and heavy organic growth with specialized degreasers and
       "Optional sealing to protect and extend clean appearance",
       "Improves safety by removing slippery algae and mold",
     ],
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/driveway-cleaning-2i5rnpKXs2obVPyB7Mi9Xv.webp",
+    image: "/manus-storage/job-roof-before-after-1_68f4e192.webp",
     metaTitle:
       "Driveway Cleaning Lakewood Ranch & Sarasota | Concrete Cleaning | SRQ Wash",
     metaDescription:
@@ -128,8 +125,7 @@ We also clean pool decks, lanai pavers, and surrounding concrete areas. Our proc
       "Improves visibility through clean screen panels",
       "Extends the life of your screen enclosure",
     ],
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/pool-cage-cleaning-FPWrGmUw9QQXQ2dHyeNXot.webp",
+    image: "/manus-storage/job-roof-after-1_90c9f27b.webp",
     metaTitle:
       "Pool Cage Cleaning Lakewood Ranch & Sarasota | Lanai Cleaning | SRQ Wash",
     metaDescription:
@@ -154,8 +150,7 @@ Our process begins with a thorough cleaning to remove all dirt, stains, and orga
       "Available in wet-look or natural finish sealers",
       "Extends paver lifespan and protects your investment",
     ],
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    image: "/manus-storage/job-roof-after-2_67294a74.webp",
     metaTitle:
       "Paver Sealing Lakewood Ranch & Sarasota | Brick Paver Sealing | SRQ Wash",
     metaDescription:

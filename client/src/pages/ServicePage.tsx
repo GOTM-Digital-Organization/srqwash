@@ -269,6 +269,35 @@ export default function ServicePage({ serviceId }: ServicePageProps) {
         </div>
       </section>
 
+      {/* ── REAL WORK PHOTOS ── */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2
+            className="text-4xl text-[#111827] mb-8"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+          >
+            Real Job Photos
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { src: "/manus-storage/job-roof-cleaning-1_3cdf5e49.webp", alt: "Soft wash roof cleaning in Lakewood Ranch" },
+              { src: "/manus-storage/job-roof-before-after-1_68f4e192.webp", alt: "Tile roof before and after soft wash" },
+              { src: "/manus-storage/job-roof-after-1_90c9f27b.webp", alt: "Clean tile roof after professional soft wash" },
+              { src: "/manus-storage/job-roof-before-after-2_d8dd2e1a.webp", alt: "Roof cleaning results in Sarasota" },
+            ].map(({ src, alt }, i) => (
+              <div key={i} className="relative overflow-hidden rounded-xl aspect-square group">
+                <img
+                  src={src}
+                  alt={alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTABanner
         title={`Ready for Professional ${service.shortTitle}?`}
         subtitle={`Get a free quote for ${service.shortTitle.toLowerCase()} services in Lakewood Ranch, Sarasota, Bradenton, and Venice.`}

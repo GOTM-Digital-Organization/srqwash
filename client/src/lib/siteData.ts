@@ -8,9 +8,9 @@ export const SITE = {
     "Professional pressure washing, soft wash roof cleaning, house washing, driveway cleaning, pool cage cleaning, and paver sealing in Lakewood Ranch, Sarasota, Bradenton, and Venice, FL.",
   address: "9040 Town Center Pkwy #102, Lakewood Ranch FL 34202",
   email: "srqwash@gmail.com",
-  // Display phone (from site)
-  phoneDisplay: "(941) 299-6338",
-  // Call button phone (hidden from display, used for tel: links only)
+  // Display phone
+  phoneDisplay: "(941) 229-2355",
+  // Call button phone (used for tel: links)
   phoneCall: "9412292355",
   rating: "4.90",
   reviewCount: "48",
@@ -150,7 +150,7 @@ Our process begins with a thorough cleaning to remove all dirt, stains, and orga
       "Available in wet-look or natural finish sealers",
       "Extends paver lifespan and protects your investment",
     ],
-    image: "/manus-storage/job-roof-after-2_67294a74.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/paver-sealing-real-nLDcTSFk6FRToX3uA5noK4.webp",
     metaTitle:
       "Paver Sealing Lakewood Ranch & Sarasota | Brick Paver Sealing | SRQ Wash",
     metaDescription:

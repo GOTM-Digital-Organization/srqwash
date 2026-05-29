@@ -1,19 +1,102 @@
 <!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>{{project_title}}</title>    
-    <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <!-- Primary SEO -->
+    <title>SRQ Wash | Professional Pressure Washing Lakewood Ranch, Sarasota & Bradenton FL</title>
+    <meta name="description" content="SRQ Wash — Lakewood Ranch's premier pressure washing company. Professional roof cleaning, house washing, driveway cleaning, pool cage cleaning & paver sealing in Sarasota, Venice & Bradenton FL. Licensed & insured. Free quotes." />
+    <meta name="keywords" content="pressure washing Lakewood Ranch, roof cleaning Sarasota, house washing Bradenton, driveway cleaning Venice, pool cage cleaning, paver sealing, soft wash, exterior cleaning FL" />
+    <link rel="canonical" href="https://srqwash.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://srqwash.com/" />
+    <meta property="og:title" content="SRQ Wash | Professional Pressure Washing in Lakewood Ranch & Sarasota FL" />
+    <meta property="og:description" content="Lakewood Ranch's premier pressure washing company. Roof cleaning, house washing, driveway cleaning, pool cage cleaning & paver sealing. Licensed & insured. Free quotes." />
+    <meta property="og:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/hero-pressure-wash-Kw9DudDwCqDzNJKmfLyTkG.png" />
+    <meta property="og:site_name" content="SRQ Wash" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SRQ Wash | Professional Pressure Washing in Lakewood Ranch & Sarasota FL" />
+    <meta name="twitter:description" content="Lakewood Ranch's premier pressure washing company. Roof cleaning, house washing, driveway cleaning, pool cage cleaning & paver sealing. Free quotes." />
+    <meta name="twitter:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/hero-pressure-wash-Kw9DudDwCqDzNJKmfLyTkG.png" />
+
+    <!-- Local Business Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SRQ Wash",
+      "description": "Professional pressure washing, soft wash roof cleaning, house washing, driveway cleaning, pool cage cleaning, and paver sealing in Lakewood Ranch, Sarasota, Venice, and Bradenton, FL.",
+      "url": "https://srqwash.com",
+      "telephone": "+19412292355",
+      "email": "srqwash@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9040 Town Center Pkwy #102",
+        "addressLocality": "Lakewood Ranch",
+        "addressRegion": "FL",
+        "postalCode": "34202",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "27.4467",
+        "longitude": "-82.4280"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "07:00",
+          "closes": "19:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.90",
+        "reviewCount": "48",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "priceRange": "$$",
+      "areaServed": [
+        {"@type": "City", "name": "Lakewood Ranch", "addressRegion": "FL"},
+        {"@type": "City", "name": "Sarasota", "addressRegion": "FL"},
+        {"@type": "City", "name": "Venice", "addressRegion": "FL"},
+        {"@type": "City", "name": "Bradenton", "addressRegion": "FL"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pressure Washing Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Roof Cleaning"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Exterior House Washing"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Driveway & Concrete Cleaning"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Cage & Lanai Cleaning"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Paver Sealing"}}
+        ]
+      },
+      "sameAs": [
+        "https://www.facebook.com/Srqwash",
+        "https://www.instagram.com/srqwash/",
+        "https://www.youtube.com/@srqwash"
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    THIS IS THE END OF A COMMENT BLOCK, BLOCK TO BE DELETED -->
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
@@ -22,5 +105,4 @@
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
-
 </html>

@@ -359,7 +359,7 @@ export default function RoofCleaningLP() {
       <section
         className="relative min-h-[85vh] flex items-center"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.75) 50%, rgba(15,23,42,0.4) 100%), url('/manus-storage/truck-trailer-1_6eb38711.webp')`,
+          backgroundImage: `linear-gradient(to right, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.65) 50%, rgba(15,23,42,0.35) 100%), url('https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/hero-roof-cleaning-barrel-tile-Fcd9LpuSZXD5dwY46PvXzH.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

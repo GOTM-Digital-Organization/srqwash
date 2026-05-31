@@ -21,10 +21,14 @@ import NeighborhoodAreaPage from "./pages/NeighborhoodAreaPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import RoofCleaningLP from "./pages/RoofCleaningLP";
 
 function Router() {
   return (
     <Switch>
+      {/* Google Ads Landing Pages — no nav, conversion-only */}
+      <Route path="/sarasota-roof-cleaning-lp" component={RoofCleaningLP} />
+
       {/* Home — supports both / and /home slug */}
       <Route path="/" component={Home} />
       <Route path="/home" component={Home} />

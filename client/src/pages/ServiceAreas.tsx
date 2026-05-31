@@ -251,7 +251,7 @@ export default function ServiceAreas() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "Communities Served", value: "40+" },
-                  { label: "Google Rating", value: "4.90 ★" },
+                  { label: "Google Rating", value: "5.0 ★" },
                   { label: "Reviews", value: "48+" },
                   { label: "Years Serving SRQ", value: "5+" },
                 ].map((stat) => (

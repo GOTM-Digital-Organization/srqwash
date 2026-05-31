@@ -368,7 +368,7 @@ export default function RoofCleaningLP() {
           <div className="max-w-2xl">
             {/* Trust badges */}
             <div className="flex flex-wrap gap-2 mb-6">
-              {["Licensed & Insured", "4.90 ★ Google Rating", "Same-Week Service"].map((badge) => (
+              {["Licensed & Insured", "5.0 ★ Google Rating", "Same-Week Service"].map((badge) => (
                 <span
                   key={badge}
                   className="bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full"
@@ -408,7 +408,7 @@ export default function RoofCleaningLP() {
             {/* Social proof row */}
             <div className="flex items-center gap-3">
               <StarRating count={5} />
-              <span className="text-white font-semibold">4.90</span>
+              <span className="text-white font-semibold">5.0</span>
               <span className="text-slate-400">·</span>
               <span className="text-slate-300 text-sm">48 Google Reviews</span>
             </div>
@@ -443,7 +443,7 @@ export default function RoofCleaningLP() {
           {[
             { icon: Shield, label: "Licensed & Insured", sub: "Fully covered in FL" },
             { icon: Award, label: "ARMA Certified", sub: "Soft wash method" },
-            { icon: Star, label: "4.90 Stars", sub: "48 Google Reviews" },
+            { icon: Star, label: "5.0 Stars", sub: "48 Google Reviews" },
             { icon: Clock, label: "Same-Week Service", sub: "Mon–Sat 7am–7pm" },
           ].map(({ icon: Icon, label, sub }) => (
             <div key={label} className="flex items-center gap-3">
@@ -621,7 +621,7 @@ export default function RoofCleaningLP() {
               className="text-slate-900"
               style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
             >
-              4.90 STARS · 48 GOOGLE REVIEWS
+              5.0 STARS · 48 GOOGLE REVIEWS
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-5">

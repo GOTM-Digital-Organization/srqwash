@@ -74,7 +74,7 @@ export default function About() {
                 className="text-gray-600 leading-relaxed mb-5"
                 style={{ fontFamily: "'Nunito Sans', sans-serif" }}
               >
-                Today, we're proud to be one of the most trusted pressure washing companies in the region, with a 4.90-star Google rating and hundreds of satisfied customers throughout Lakewood Ranch, Sarasota, Venice, and Bradenton. Our team of certified professionals brings the same dedication to every job, whether it's a single driveway cleaning or a full property restoration.
+                Today, we're proud to be one of the most trusted pressure washing companies in the region, with a 5.0-star Google rating and hundreds of satisfied customers throughout Lakewood Ranch, Sarasota, Venice, and Bradenton. Our team of certified professionals brings the same dedication to every job, whether it's a single driveway cleaning or a full property restoration.
               </p>
               <p
                 className="text-gray-600 leading-relaxed mb-8"
@@ -206,7 +206,7 @@ export default function About() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "4.90", label: "Star Rating", sub: `${SITE.reviewCount} Google Reviews` },
+                { value: "5.0", label: "Star Rating", sub: `${SITE.reviewCount} Google Reviews` },
                 { value: "500+", label: "Properties Cleaned", sub: "Residential & Commercial" },
                 { value: "5+", label: "Years in Business", sub: "Serving SW Florida" },
                 { value: "100%", label: "Satisfaction Guarantee", sub: "On Every Job" },

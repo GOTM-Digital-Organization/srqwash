@@ -91,7 +91,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-3 mb-6">
               {[
                 { icon: Shield, label: "Licensed & Insured" },
-                { icon: Star, label: "4.90 Stars" },
+                { icon: Star, label: "5.0 Stars" },
                 { icon: Clock, label: "Same-Week Service" },
               ].map(({ icon: Icon, label }) => (
                 <div
@@ -239,7 +239,7 @@ export default function Home() {
                   className="text-4xl text-[#F97316]"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  4.90
+                  5.0
                 </div>
                 <div className="flex mb-1">
                   {[1, 2, 3, 4, 5].map((i) => (

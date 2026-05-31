@@ -170,7 +170,7 @@ export default function ServiceAreaPage({ areaId }: ServiceAreaPageProps) {
                   {[
                     "Locally owned and operated",
                     "Fully licensed and insured",
-                    "4.90 star Google rating",
+                    "5.0 star Google rating",
                     "Free, no-obligation estimates",
                     "Same-week service available",
                     "Eco-friendly cleaning solutions",

@@ -108,7 +108,7 @@ export default function NeighborhoodAreaPage({ areaId }: NeighborhoodAreaPagePro
 
           {/* Trust badges */}
           <div className="flex flex-wrap gap-4 mt-8">
-            {["Licensed & Insured", "4.90 ★ Google Rating", "Same-Week Service", "Free Estimates"].map((badge) => (
+            {["Licensed & Insured", "5.0 ★ Google Rating", "Same-Week Service", "Free Estimates"].map((badge) => (
               <div
                 key={badge}
                 className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-xs text-white font-semibold"
@@ -203,7 +203,7 @@ export default function NeighborhoodAreaPage({ areaId }: NeighborhoodAreaPagePro
                   {[
                     "Locally owned and operated in Lakewood Ranch",
                     "Fully licensed and insured",
-                    "4.90 star Google rating — 48 reviews",
+                    "5.0 star Google rating — 48 reviews",
                     "Free, no-obligation estimates",
                     "Same-week service available",
                     "Eco-friendly, plant-safe cleaning solutions",

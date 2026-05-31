@@ -12,7 +12,7 @@ export const SITE = {
   phoneDisplay: "(941) 229-2355",
   // Call button phone (used for tel: links)
   phoneCall: "9412292355",
-  rating: "4.90",
+  rating: "5.0",
   reviewCount: "48",
   hours: [
     { day: "Monday", hours: "7am – 7pm" },

@@ -24,7 +24,7 @@ export const appRouter = router({
       .input(
         z.object({
           name: z.string().min(1, "Name is required"),
-          email: z.string().email("Valid email required"),
+          email: z.string().email("Valid email required").optional().default(""),
           phone: z.string().min(1, "Phone is required"),
           service: z.string().optional().default(""),
           address: z.string().optional().default(""),

@@ -9,6 +9,8 @@
 
 import { useEffect, useState } from "react";
 import { Phone, CheckCircle2, Star, Shield, Clock, Award, ChevronDown, MapPin, AlertTriangle } from "lucide-react";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 const PHONE = "+19412292355";
 const PHONE_DISPLAY = "(941) 229-2355";
@@ -124,6 +126,172 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         </div>
       )}
     </div>
+  );
+}
+
+function QuoteForm({ phone, phoneDisplay }: { phone: string; phoneDisplay: string }) {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    address: "",
+    roofType: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const submitContact = trpc.contact.submit.useMutation({
+    onSuccess: () => setSubmitted(true),
+    onError: () => toast.error("Failed to send. Please call us directly."),
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    submitContact.mutate({
+      name: `${formData.firstName} ${formData.lastName}`.trim(),
+      email: "",
+      phone: formData.phone,
+      address: formData.address,
+      service: formData.roofType ? `Roof Cleaning — ${formData.roofType}` : "Roof Cleaning",
+      message: formData.message,
+    });
+  };
+
+  return (
+    <section id="quote-form" className="py-14 px-4 bg-slate-900">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-10">
+          <p className="text-sky-400 font-bold text-sm uppercase tracking-widest mb-2">Free Estimate</p>
+          <h2
+            className="text-white"
+            style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
+          >
+            GET YOUR FREE ROOF CLEANING QUOTE
+          </h2>
+          <p className="text-slate-400 mt-2">
+            Most quotes are provided same-day. No obligation, no pressure.
+          </p>
+        </div>
+
+        {submitted ? (
+          <div className="bg-green-900/40 border border-green-500/30 rounded-xl p-8 text-center">
+            <CheckCircle2 className="w-12 h-12 text-green-400 mx-auto mb-4" />
+            <h3 className="text-white text-2xl font-bold mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}>
+              REQUEST RECEIVED!
+            </h3>
+            <p className="text-slate-300">
+              Thanks! We'll review your request and get back to you shortly. For faster service, call us directly.
+            </p>
+            <a
+              href={`tel:${phone}`}
+              className="inline-flex items-center gap-2 mt-6 bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg transition-colors"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}
+            >
+              <Phone className="w-5 h-5" />
+              CALL NOW FOR FASTER SERVICE
+            </a>
+          </div>
+        ) : (
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-slate-300 text-sm font-semibold mb-1.5">First Name *</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  required
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="John"
+                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-slate-300 text-sm font-semibold mb-1.5">Last Name *</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  required
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Smith"
+                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Phone Number *</label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="(941) 555-0123"
+                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
+              />
+            </div>
+            <div>
+              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Property Address *</label>
+              <input
+                type="text"
+                name="address"
+                required
+                value={formData.address}
+                onChange={handleChange}
+                placeholder="123 Main St, Sarasota, FL"
+                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
+              />
+            </div>
+            <div>
+              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Roof Type</label>
+              <select
+                name="roofType"
+                value={formData.roofType}
+                onChange={handleChange}
+                className="w-full bg-slate-800 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
+              >
+                <option value="">Select roof type</option>
+                <option value="Tile (Barrel / Flat)">Tile (Barrel / Flat)</option>
+                <option value="Asphalt Shingle">Asphalt Shingle</option>
+                <option value="Metal">Metal</option>
+                <option value="Flat / TPO">Flat / TPO</option>
+                <option value="Other / Not Sure">Other / Not Sure</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Message (Optional)</label>
+              <textarea
+                name="message"
+                rows={3}
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Describe the issue — black streaks, green algae, HOA notice, etc."
+                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={submitContact.isPending}
+              className="w-full bg-orange-500 hover:bg-orange-600 active:scale-[0.99] text-white font-bold py-4 rounded-lg text-xl transition-all duration-150 shadow-lg shadow-orange-500/30 disabled:opacity-70"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}
+            >
+              {submitContact.isPending ? "SENDING..." : "SEND MY FREE QUOTE REQUEST"}
+            </button>
+            <p className="text-center text-slate-500 text-xs">
+              Or call us directly:{" "}
+              <a href={`tel:${phone}`} className="text-sky-400 font-semibold hover:text-sky-300">
+                {phoneDisplay}
+              </a>
+            </p>
+          </form>
+        )}
+      </div>
+    </section>
   );
 }
 
@@ -480,100 +648,8 @@ export default function RoofCleaningLP() {
       </section>
 
       {/* ─── QUOTE FORM ─── */}
-      <section id="quote-form" className="py-14 px-4 bg-slate-900">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-sky-400 font-bold text-sm uppercase tracking-widest mb-2">Free Estimate</p>
-            <h2
-              className="text-white"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
-            >
-              GET YOUR FREE ROOF CLEANING QUOTE
-            </h2>
-            <p className="text-slate-400 mt-2">
-              Most quotes are provided same-day. No obligation, no pressure.
-            </p>
-          </div>
-          <form
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              window.location.href = `tel:${PHONE}`;
-            }}
-          >
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-slate-300 text-sm font-semibold mb-1.5">First Name *</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="John"
-                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-slate-300 text-sm font-semibold mb-1.5">Last Name *</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Smith"
-                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Phone Number *</label>
-              <input
-                type="tel"
-                required
-                placeholder="(941) 555-0123"
-                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
-              />
-            </div>
-            <div>
-              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Property Address *</label>
-              <input
-                type="text"
-                required
-                placeholder="123 Main St, Sarasota, FL"
-                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
-              />
-            </div>
-            <div>
-              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Roof Type</label>
-              <select className="w-full bg-slate-800 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors">
-                <option value="">Select roof type</option>
-                <option value="tile">Tile (Barrel / Flat)</option>
-                <option value="shingle">Asphalt Shingle</option>
-                <option value="metal">Metal</option>
-                <option value="flat">Flat / TPO</option>
-                <option value="other">Other / Not Sure</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Message (Optional)</label>
-              <textarea
-                rows={3}
-                placeholder="Describe the issue — black streaks, green algae, HOA notice, etc."
-                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 active:scale-[0.99] text-white font-bold py-4 rounded-lg text-xl transition-all duration-150 shadow-lg shadow-orange-500/30"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}
-            >
-              SEND MY FREE QUOTE REQUEST
-            </button>
-            <p className="text-center text-slate-500 text-xs">
-              Or call us directly:{" "}
-              <a href={`tel:${PHONE}`} className="text-sky-400 font-semibold hover:text-sky-300">
-                {PHONE_DISPLAY}
-              </a>
-            </p>
-          </form>
-        </div>
-      </section>
+      <QuoteForm phone={PHONE} phoneDisplay={PHONE_DISPLAY} />
+
 
       {/* ─── FAQ ─── */}
       <section className="py-14 px-4 bg-white">

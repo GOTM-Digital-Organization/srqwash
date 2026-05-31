@@ -22,8 +22,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import RoofCleaningLP from "./pages/RoofCleaningLP";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       {/* Google Ads Landing Pages — no nav, conversion-only */}

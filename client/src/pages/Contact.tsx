@@ -7,6 +7,8 @@ import { SITE } from "@/lib/siteData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -18,7 +20,16 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+
+  const submitContact = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+    },
+    onError: (err) => {
+      toast.error("Failed to send your message. Please call us directly or try again.");
+      console.error("Contact form error:", err);
+    },
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,12 +43,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-    }, 1200);
+    submitContact.mutate(formData);
   };
 
   return (
@@ -218,10 +224,10 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    disabled={submitting}
+                    disabled={submitContact.isPending}
                     className="btn-orange w-full justify-center text-lg py-4 disabled:opacity-70"
                   >
-                    {submitting ? (
+                    {submitContact.isPending ? (
                       <>Sending...</>
                     ) : (
                       <>

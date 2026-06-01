@@ -77,7 +77,7 @@ export default function Home() {
         className="relative min-h-screen flex items-center"
         style={{
           backgroundImage:
-            "url(/manus-storage/hero-roof-cleaning-barrel-tile-Fcd9LpuSZXD5dwY46PvXzH.webp)",
+            "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/hero-roof-cleaning-barrel-tile-Fcd9LpuSZXD5dwY46PvXzH.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

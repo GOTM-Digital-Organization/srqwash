@@ -22,12 +22,16 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import RoofCleaningLP from "./pages/RoofCleaningLP";
+import ThankYou from "./pages/ThankYou";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       {/* Google Ads Landing Pages — no nav, conversion-only */}
       <Route path="/sarasota-roof-cleaning-lp" component={RoofCleaningLP} />
+
+      {/* Thank You page — shown after form submission */}
+      <Route path="/thank-you" component={ThankYou} />
 
       {/* Home — supports both / and /home slug */}
       <Route path="/" component={Home} />

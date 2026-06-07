@@ -2,6 +2,7 @@
 // Design: Florida Power — Slate Black + Pressure Blue + Safety Orange
 
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { Phone, Mail, MapPin, Clock, CheckCircle, Send } from "lucide-react";
 import { SITE } from "@/lib/siteData";
 import Navbar from "@/components/Navbar";
@@ -20,10 +21,11 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [, navigate] = useLocation();
 
   const submitContact = trpc.contact.submit.useMutation({
     onSuccess: () => {
-      setSubmitted(true);
+      navigate("/thank-you");
     },
     onError: (err) => {
       toast.error("Failed to send your message. Please call us directly or try again.");

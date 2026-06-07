@@ -8,6 +8,7 @@
  */
 
 import { useEffect, useState } from "react";
+import { useLocation } from "wouter";
 import { Phone, CheckCircle2, Star, Shield, Clock, Award, ChevronDown, MapPin, AlertTriangle } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -139,9 +140,10 @@ function QuoteForm({ phone, phoneDisplay }: { phone: string; phoneDisplay: strin
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [, navigate] = useLocation();
 
   const submitContact = trpc.contact.submit.useMutation({
-    onSuccess: () => setSubmitted(true),
+    onSuccess: () => navigate("/thank-you"),
     onError: () => toast.error("Failed to send. Please call us directly."),
   });
 

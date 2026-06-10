@@ -47,6 +47,30 @@ function Router() {
       <Route path="/lanai-cleaning">
         {() => <Redirect to="/pool-cage-cleaning" />}
       </Route>
+      <Route path="/about-us">
+        {() => <Redirect to="/about" />}
+      </Route>
+      <Route path="/about-us/">
+        {() => <Redirect to="/about" />}
+      </Route>
+      <Route path="/projects">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/projects/">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/cgi-bin">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/cgi-bin/">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/roof-cleaning-price-list">
+        {() => <Redirect to="/roof-cleaning" />}
+      </Route>
+      <Route path="/roof-cleaning-price-list/">
+        {() => <Redirect to="/roof-cleaning" />}
+      </Route>
 
       {/* Service pages */}
       <Route path="/roof-cleaning">

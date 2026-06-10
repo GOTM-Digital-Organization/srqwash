@@ -4,7 +4,7 @@
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Redirect } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
@@ -42,6 +42,11 @@ function Router() {
       <Route path="/reviews-page" component={Reviews} />
       <Route path="/faqs" component={FAQsPage} />
       <Route path="/contact-us" component={Contact} />
+
+      {/* Legacy redirects from old website */}
+      <Route path="/lanai-cleaning">
+        {() => <Redirect to="/pool-cage-cleaning" />}
+      </Route>
 
       {/* Service pages */}
       <Route path="/roof-cleaning">

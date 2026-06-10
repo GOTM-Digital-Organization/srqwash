@@ -51,10 +51,40 @@ const BUSINESS_IDENTITY = {
   ],
 };
 
-// ── Homepage / Contact — full LocalBusiness ───────────────────────────────────
+// ── Inline Review objects built from the TESTIMONIALS array ──────────────────
+// These are embedded inside the LocalBusiness schema on the homepage.
 
-export function buildLocalBusinessSchema() {
-  return {
+export interface TestimonialInput {
+  name: string;
+  location: string;
+  rating: number;
+  text: string;
+  service: string;
+}
+
+export function buildReviewObjects(testimonials: TestimonialInput[]) {
+  return testimonials.map((t) => ({
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: t.name,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(t.rating),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    reviewBody: t.text,
+    name: `${t.service} — ${t.location}`,
+    itemReviewed: { "@id": `${BASE_URL}/#business` },
+  }));
+}
+
+// ── Homepage / Contact — full LocalBusiness with embedded reviews ─────────────
+
+export function buildLocalBusinessSchema(testimonials?: TestimonialInput[]) {
+  const base = {
     "@context": "https://schema.org",
     ...BUSINESS_IDENTITY,
     description:
@@ -76,7 +106,13 @@ export function buildLocalBusinessSchema() {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Paver Sealing" } },
       ],
     },
-  };
+  } as Record<string, unknown>;
+
+  if (testimonials && testimonials.length > 0) {
+    base.review = buildReviewObjects(testimonials);
+  }
+
+  return base;
 }
 
 // ── Service page — LocalBusiness + Service + Breadcrumb ───────────────────────

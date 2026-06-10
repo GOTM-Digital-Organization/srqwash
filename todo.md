@@ -18,3 +18,7 @@
 - [x] Injected LocalBusiness + BreadcrumbList JSON-LD on all 40+ neighborhood pages
 - [x] Injected full LocalBusiness JSON-LD (with opening hours, aggregate rating, offer catalog) on homepage and contact page
 - [x] Wrote and passed 23 unit tests for all schema builder functions
+- [x] Add Review schema to homepage testimonials (wrapping existing testimonials in schema.org Review objects)
+- [x] Update buildLocalBusinessSchema to embed Review array and reference them in aggregateRating
+- [x] Build dynamic /sitemap.xml server endpoint listing all service, area, and neighborhood URLs
+- [x] Validate JSON-LD output via Google Rich Results Test

@@ -49,7 +49,7 @@ const STATS = [
 ];
 
 export default function Home() {
-  useJsonLd(buildLocalBusinessSchema());
+  useJsonLd(buildLocalBusinessSchema(TESTIMONIALS));
 
   const [statsVisible, setStatsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);

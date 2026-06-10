@@ -1,28 +1,72 @@
-// Unit tests for JSON-LD schema builder utilities
-// These run server-side via vitest (no DOM required)
-
+// Unit tests for JSON-LD schema builders and sitemap generator
 import { describe, it, expect } from "vitest";
-
-// We import the builders directly from the source file.
-// Because the file lives in client/src, we use a relative path.
 import {
   buildLocalBusinessSchema,
   buildServicePageSchema,
   buildServiceAreaSchema,
   buildNeighborhoodSchema,
+  buildReviewObjects,
+  type TestimonialInput,
 } from "../client/src/lib/schema";
+import {
+  buildSitemapXml,
+  STATIC_PAGES,
+  SERVICE_SLUGS,
+  CITY_AREA_SLUGS,
+  NEIGHBORHOOD_SLUGS,
+} from "./sitemap";
 
-// ── buildLocalBusinessSchema ─────────────────────────────────────────────────
+const SAMPLE_TESTIMONIALS: TestimonialInput[] = [
+  {
+    name: "Jennifer M.",
+    location: "Lakewood Ranch, FL",
+    rating: 5,
+    text: "SRQ Wash did an incredible job on our roof and driveway.",
+    service: "Roof Cleaning & Driveway Cleaning",
+  },
+  {
+    name: "Robert T.",
+    location: "Sarasota, FL",
+    rating: 5,
+    text: "I've tried other pressure washing companies before but SRQ Wash is on another level.",
+    service: "Exterior House Washing",
+  },
+];
+
+// ── buildReviewObjects ────────────────────────────────────────────────────────
+
+describe("buildReviewObjects", () => {
+  it("returns an array of Review objects matching the input", () => {
+    const reviews = buildReviewObjects(SAMPLE_TESTIMONIALS);
+    expect(reviews).toHaveLength(2);
+    expect(reviews[0]["@type"]).toBe("Review");
+    expect((reviews[0].author as any).name).toBe("Jennifer M.");
+    expect((reviews[0].reviewRating as any)["@type"]).toBe("Rating");
+    expect((reviews[0].reviewRating as any).ratingValue).toBe("5");
+    expect(reviews[0].reviewBody).toContain("incredible job");
+  });
+
+  it("includes itemReviewed pointing to the business @id", () => {
+    const reviews = buildReviewObjects(SAMPLE_TESTIMONIALS);
+    expect((reviews[0].itemReviewed as any)["@id"]).toBe("https://srqwash.com/#business");
+  });
+
+  it("returns empty array for empty input", () => {
+    expect(buildReviewObjects([])).toEqual([]);
+  });
+});
+
+// ── buildLocalBusinessSchema ──────────────────────────────────────────────────
 
 describe("buildLocalBusinessSchema", () => {
   it("returns a valid @context and @type", () => {
-    const schema = buildLocalBusinessSchema();
+    const schema = buildLocalBusinessSchema() as any;
     expect(schema["@context"]).toBe("https://schema.org");
     expect(schema["@type"]).toContain("LocalBusiness");
   });
 
   it("includes the business name", () => {
-    const schema = buildLocalBusinessSchema();
+    const schema = buildLocalBusinessSchema() as any;
     expect(schema.name).toBe("SRQ Wash");
   });
 
@@ -45,6 +89,24 @@ describe("buildLocalBusinessSchema", () => {
   it("includes areaServed with 4 cities", () => {
     const schema = buildLocalBusinessSchema() as any;
     expect(schema.areaServed).toHaveLength(4);
+  });
+
+  it("does NOT include review array when no testimonials are passed", () => {
+    const schema = buildLocalBusinessSchema() as any;
+    expect(schema.review).toBeUndefined();
+  });
+
+  it("embeds Review objects when testimonials are provided", () => {
+    const schema = buildLocalBusinessSchema(SAMPLE_TESTIMONIALS) as any;
+    expect(Array.isArray(schema.review)).toBe(true);
+    expect(schema.review).toHaveLength(2);
+    expect(schema.review[0]["@type"]).toBe("Review");
+  });
+
+  it("includes sameAs social links", () => {
+    const schema = buildLocalBusinessSchema() as any;
+    expect(schema.sameAs).toContain("https://www.facebook.com/Srqwash");
+    expect(schema.sameAs).toContain("https://www.instagram.com/srqwash/");
   });
 });
 
@@ -72,6 +134,11 @@ describe("buildServicePageSchema", () => {
   it("service URL is built from BASE_URL + slug", () => {
     const [service] = buildServicePageSchema(input) as any[];
     expect(service.url).toBe("https://srqwash.com/roof-cleaning");
+  });
+
+  it("service provider references the business @id", () => {
+    const [service] = buildServicePageSchema(input) as any[];
+    expect(service.provider["@id"]).toBe("https://srqwash.com/#business");
   });
 
   it("second schema is a LocalBusiness", () => {
@@ -172,5 +239,74 @@ describe("buildNeighborhoodSchema", () => {
     const [, breadcrumb] = buildNeighborhoodSchema(input) as any[];
     const cityItem = breadcrumb.itemListElement[2];
     expect(cityItem.item).toBe("https://srqwash.com/service-area/lakewood-ranch");
+  });
+});
+
+// ── buildSitemapXml ───────────────────────────────────────────────────────────
+
+describe("buildSitemapXml", () => {
+  it("produces a valid XML declaration", () => {
+    const xml = buildSitemapXml();
+    expect(xml).toMatch(/^<\?xml version="1\.0" encoding="UTF-8"\?>/);
+  });
+
+  it("wraps content in a urlset element", () => {
+    const xml = buildSitemapXml();
+    expect(xml).toContain('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+    expect(xml).toContain("</urlset>");
+  });
+
+  it("includes all static pages", () => {
+    const xml = buildSitemapXml();
+    for (const page of STATIC_PAGES) {
+      expect(xml).toContain(`https://srqwash.com${page.loc}`);
+    }
+  });
+
+  it("includes all service slugs", () => {
+    const xml = buildSitemapXml();
+    for (const slug of SERVICE_SLUGS) {
+      expect(xml).toContain(`https://srqwash.com${slug}`);
+    }
+  });
+
+  it("includes all city area slugs", () => {
+    const xml = buildSitemapXml();
+    for (const slug of CITY_AREA_SLUGS) {
+      expect(xml).toContain(`https://srqwash.com${slug}`);
+    }
+  });
+
+  it("includes all neighborhood slugs", () => {
+    const xml = buildSitemapXml();
+    for (const slug of NEIGHBORHOOD_SLUGS) {
+      expect(xml).toContain(`https://srqwash.com${slug}`);
+    }
+  });
+
+  it("has at least 50 total URL entries", () => {
+    const xml = buildSitemapXml();
+    const count = (xml.match(/<loc>/g) || []).length;
+    expect(count).toBeGreaterThanOrEqual(50);
+  });
+
+  it("includes today's date in lastmod fields", () => {
+    const xml = buildSitemapXml();
+    const today = new Date().toISOString().split("T")[0];
+    expect(xml).toContain(`<lastmod>${today}</lastmod>`);
+  });
+
+  it("includes priority values for different page types", () => {
+    const xml = buildSitemapXml();
+    expect(xml).toContain("<priority>1.0</priority>");
+    expect(xml).toContain("<priority>0.9</priority>");
+    expect(xml).toContain("<priority>0.7</priority>");
+  });
+
+  it("homepage has priority 1.0", () => {
+    const xml = buildSitemapXml();
+    expect(xml).toContain(
+      `<loc>https://srqwash.com/</loc>\n    <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>`
+    );
   });
 });

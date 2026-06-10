@@ -134,6 +134,7 @@ function QuoteForm({ phone, phoneDisplay }: { phone: string; phoneDisplay: strin
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    email: "",
     phone: "",
     address: "",
     roofType: "",
@@ -155,7 +156,7 @@ function QuoteForm({ phone, phoneDisplay }: { phone: string; phoneDisplay: strin
     e.preventDefault();
     submitContact.mutate({
       name: `${formData.firstName} ${formData.lastName}`.trim(),
-      email: "",
+      email: formData.email || "",
       phone: formData.phone,
       address: formData.address,
       service: formData.roofType ? `Roof Cleaning — ${formData.roofType}` : "Roof Cleaning",
@@ -224,6 +225,17 @@ function QuoteForm({ phone, phoneDisplay }: { phone: string; phoneDisplay: strin
                   className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
                 />
               </div>
+            </div>
+            <div>
+              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Email Address (Optional)</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="john@example.com"
+                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 transition-colors"
+              />
             </div>
             <div>
               <label className="block text-slate-300 text-sm font-semibold mb-1.5">Phone Number *</label>

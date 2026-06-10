@@ -10,6 +10,7 @@ import { NEIGHBORHOOD_AREAS, SERVICES, TESTIMONIALS, SITE, SERVICE_AREAS } from 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
+import { useSeoMeta } from "@/hooks/useSeoMeta";
 
 interface NeighborhoodAreaPageProps {
   areaId: string;
@@ -18,6 +19,8 @@ interface NeighborhoodAreaPageProps {
 export default function NeighborhoodAreaPage({ areaId }: NeighborhoodAreaPageProps) {
   const area = NEIGHBORHOOD_AREAS.find((a) => a.id === areaId);
   const [, navigate] = useLocation();
+
+  useSeoMeta(area?.metaTitle, area?.metaDescription);
 
   useEffect(() => {
     if (!area) navigate("/404");

@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 import PageHero from "@/components/PageHero";
+import { useSeoMeta } from "@/hooks/useSeoMeta";
 
 interface ServiceAreaPageProps {
   areaId: string;
@@ -46,6 +47,8 @@ const AREA_CONTENT: Record<string, { intro: string; why: string; neighborhoods?:
 export default function ServiceAreaPage({ areaId }: ServiceAreaPageProps) {
   const area = SERVICE_AREAS.find((a) => a.id === areaId);
   const [, navigate] = useLocation();
+
+  useSeoMeta(area?.metaTitle, area?.metaDescription);
 
   useEffect(() => {
     if (!area) navigate("/404");

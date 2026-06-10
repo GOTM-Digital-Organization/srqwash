@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 import PageHero from "@/components/PageHero";
+import { useSeoMeta } from "@/hooks/useSeoMeta";
 
 interface ServicePageProps {
   serviceId: string;
@@ -18,6 +19,8 @@ interface ServicePageProps {
 export default function ServicePage({ serviceId }: ServicePageProps) {
   const service = SERVICES.find((s) => s.id === serviceId);
   const [, navigate] = useLocation();
+
+  useSeoMeta(service?.metaTitle, service?.metaDescription);
 
   useEffect(() => {
     if (!service) navigate("/404");

@@ -44,8 +44,72 @@ function Router() {
       <Route path="/contact-us" component={Contact} />
 
       {/* Legacy redirects from old website */}
+      {/* Common GHL / old site slugs that may have backlinks */}
       <Route path="/lanai-cleaning">
         {() => <Redirect to="/pool-cage-cleaning" />}
+      </Route>
+      <Route path="/lanai-cleaning/">
+        {() => <Redirect to="/pool-cage-cleaning" />}
+      </Route>
+      <Route path="/services">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/services/">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/contact">
+        {() => <Redirect to="/contact-us" />}
+      </Route>
+      <Route path="/contact/">
+        {() => <Redirect to="/contact-us" />}
+      </Route>
+      <Route path="/gallery">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/gallery/">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/testimonials">
+        {() => <Redirect to="/reviews-page" />}
+      </Route>
+      <Route path="/testimonials/">
+        {() => <Redirect to="/reviews-page" />}
+      </Route>
+      <Route path="/reviews">
+        {() => <Redirect to="/reviews-page" />}
+      </Route>
+      <Route path="/reviews/">
+        {() => <Redirect to="/reviews-page" />}
+      </Route>
+      <Route path="/blog">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/blog/">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/faq">
+        {() => <Redirect to="/faqs" />}
+      </Route>
+      <Route path="/faq/">
+        {() => <Redirect to="/faqs" />}
+      </Route>
+      <Route path="/pressure-washing">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/pressure-washing/">
+        {() => <Redirect to="/" />}
+      </Route>
+      <Route path="/soft-wash">
+        {() => <Redirect to="/roof-cleaning" />}
+      </Route>
+      <Route path="/soft-wash/">
+        {() => <Redirect to="/roof-cleaning" />}
+      </Route>
+      <Route path="/soft-washing">
+        {() => <Redirect to="/roof-cleaning" />}
+      </Route>
+      <Route path="/soft-washing/">
+        {() => <Redirect to="/roof-cleaning" />}
       </Route>
       <Route path="/about-us">
         {() => <Redirect to="/about" />}

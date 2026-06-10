@@ -11,6 +11,8 @@ import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 import PageHero from "@/components/PageHero";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { useJsonLd } from "@/hooks/useJsonLd";
+import { buildServiceAreaSchema } from "@/lib/schema";
 
 interface ServiceAreaPageProps {
   areaId: string;
@@ -49,6 +51,16 @@ export default function ServiceAreaPage({ areaId }: ServiceAreaPageProps) {
   const [, navigate] = useLocation();
 
   useSeoMeta(area?.metaTitle, area?.metaDescription);
+  useJsonLd(
+    area
+      ? buildServiceAreaSchema({
+          name: area.name,
+          state: area.state,
+          slug: area.slug,
+          description: area.description,
+        })
+      : []
+  );
 
   useEffect(() => {
     if (!area) navigate("/404");

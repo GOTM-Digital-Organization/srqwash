@@ -11,3 +11,10 @@
 - [x] Added useSeoMeta to NeighborhoodAreaPage — all 40+ neighborhood pages now have unique meta tags
 - [x] Added optional email field to Roof Cleaning LP QuoteForm
 - [x] Added legacy redirects for /services, /contact, /gallery, /testimonials, /reviews, /blog, /faq, /pressure-washing, /soft-wash, /soft-washing
+- [x] Created useJsonLd hook to inject JSON-LD script tags into document head
+- [x] Created schema.ts with buildLocalBusinessSchema, buildServicePageSchema, buildServiceAreaSchema, buildNeighborhoodSchema builders
+- [x] Injected Service + LocalBusiness + BreadcrumbList JSON-LD on all 5 service pages
+- [x] Injected LocalBusiness + BreadcrumbList JSON-LD on all 4 city area pages
+- [x] Injected LocalBusiness + BreadcrumbList JSON-LD on all 40+ neighborhood pages
+- [x] Injected full LocalBusiness JSON-LD (with opening hours, aggregate rating, offer catalog) on homepage and contact page
+- [x] Wrote and passed 23 unit tests for all schema builder functions

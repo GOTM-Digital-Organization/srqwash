@@ -21,6 +21,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 import TrustBar from "@/components/TrustBar";
+import { useJsonLd } from "@/hooks/useJsonLd";
+import { buildLocalBusinessSchema } from "@/lib/schema";
 
 // Animated counter hook
 function useCountUp(target: number, duration = 1500, start = false) {
@@ -47,6 +49,8 @@ const STATS = [
 ];
 
 export default function Home() {
+  useJsonLd(buildLocalBusinessSchema());
+
   const [statsVisible, setStatsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);

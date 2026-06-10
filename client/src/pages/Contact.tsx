@@ -10,8 +10,12 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { useJsonLd } from "@/hooks/useJsonLd";
+import { buildLocalBusinessSchema } from "@/lib/schema";
 
 export default function Contact() {
+  useJsonLd(buildLocalBusinessSchema());
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -11,6 +11,8 @@ import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 import PageHero from "@/components/PageHero";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { useJsonLd } from "@/hooks/useJsonLd";
+import { buildServicePageSchema } from "@/lib/schema";
 
 interface ServicePageProps {
   serviceId: string;
@@ -21,6 +23,16 @@ export default function ServicePage({ serviceId }: ServicePageProps) {
   const [, navigate] = useLocation();
 
   useSeoMeta(service?.metaTitle, service?.metaDescription);
+  useJsonLd(
+    service
+      ? buildServicePageSchema({
+          title: service.title,
+          description: service.description,
+          slug: service.slug,
+          image: service.image,
+        })
+      : []
+  );
 
   useEffect(() => {
     if (!service) navigate("/404");

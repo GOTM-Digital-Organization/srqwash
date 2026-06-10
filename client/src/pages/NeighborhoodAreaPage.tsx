@@ -11,6 +11,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { useJsonLd } from "@/hooks/useJsonLd";
+import { buildNeighborhoodSchema } from "@/lib/schema";
 
 interface NeighborhoodAreaPageProps {
   areaId: string;
@@ -21,6 +23,17 @@ export default function NeighborhoodAreaPage({ areaId }: NeighborhoodAreaPagePro
   const [, navigate] = useLocation();
 
   useSeoMeta(area?.metaTitle, area?.metaDescription);
+  useJsonLd(
+    area
+      ? buildNeighborhoodSchema({
+          name: area.name,
+          parent: area.parent,
+          state: area.state,
+          slug: area.slug,
+          intro: area.intro,
+        })
+      : []
+  );
 
   useEffect(() => {
     if (!area) navigate("/404");

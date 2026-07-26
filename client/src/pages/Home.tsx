@@ -24,19 +24,30 @@ import TrustBar from "@/components/TrustBar";
 import { useJsonLd } from "@/hooks/useJsonLd";
 import { buildLocalBusinessSchema } from "@/lib/schema";
 
-// Animated counter hook
+// Animated counter hook — cancels rAF on cleanup to prevent memory leaks
 function useCountUp(target: number, duration = 1500, start = false) {
   const [count, setCount] = useState(0);
   useEffect(() => {
     if (!start) return;
+    let rafId: number;
     let startTime: number | null = null;
+    let cancelled = false;
     const step = (timestamp: number) => {
+      if (cancelled) return;
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
       setCount(Math.floor(progress * target));
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) {
+        rafId = requestAnimationFrame(step);
+      } else {
+        setCount(target); // guarantee final value is exact
+      }
     };
-    requestAnimationFrame(step);
+    rafId = requestAnimationFrame(step);
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+    };
   }, [target, duration, start]);
   return count;
 }
@@ -56,13 +67,27 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
+    // Fire as soon as even 1px of the stats section enters the viewport.
+    // rootMargin: 0px 0px -50px 0px means trigger 50px before the bottom edge
+    // so fast scrollers still catch the animation.
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setStatsVisible(true);
+        if (entry.isIntersecting) {
+          setStatsVisible(true);
+          observer.disconnect(); // only need to fire once
+        }
       },
-      { threshold: 0.3 }
+      { threshold: 0.05, rootMargin: "0px 0px -50px 0px" }
     );
-    if (statsRef.current) observer.observe(statsRef.current);
+    if (statsRef.current) {
+      // If the element is already in view on mount (e.g. large monitor), fire immediately
+      const rect = statsRef.current.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        setStatsVisible(true);
+      } else {
+        observer.observe(statsRef.current);
+      }
+    }
     return () => observer.disconnect();
   }, []);
 

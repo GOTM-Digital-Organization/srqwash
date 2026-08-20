@@ -104,7 +104,7 @@ export default function About() {
             </div>
             <div className="relative">
               <img
-                src="/manus-storage/truck-trailer-1_7192309a.webp"
+                src="/images/truck-trailer-1.webp"
                 alt="SRQ Wash truck and trailer at a Lakewood Ranch home"
                 className="rounded-xl shadow-2xl w-full object-cover h-[480px]"
               />
@@ -246,7 +246,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div className="relative">
               <img
-                src="/manus-storage/owner-photo_01cb5149.webp"
+                src="/images/owner-photo.webp"
                 alt="Owner of SRQ Wash"
                 className="rounded-2xl shadow-2xl w-full h-[520px]"
                 style={{ objectFit: 'contain', objectPosition: 'center', background: '#f1f5f9' }}

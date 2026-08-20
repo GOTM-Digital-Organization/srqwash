@@ -60,7 +60,7 @@ export default function NeighborhoodAreaPage({ areaId }: NeighborhoodAreaPagePro
       <section
         className="relative pt-32 pb-20 bg-[#111827] overflow-hidden"
         style={{
-          backgroundImage: `url('/manus-storage/truck-trailer-1_7192309a.webp')`,
+          backgroundImage: `url('/images/truck-trailer-1.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

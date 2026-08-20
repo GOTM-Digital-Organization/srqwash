@@ -17,10 +17,10 @@ const PHONE = "+19412292355";
 const PHONE_DISPLAY = "(941) 229-2355";
 
 const roofPhotos = [
-  "/manus-storage/job-roof-cleaning-1_d8225cb6.webp",
-  "/manus-storage/job-roof-cleaning-2_60119e61.webp",
-  "/manus-storage/job-roof-before-after-1_03c581b1.webp",
-  "/manus-storage/job-roof-after-1_924d4337.webp",
+  "/images/job-roof-cleaning-1.webp",
+  "/images/job-roof-cleaning-2.webp",
+  "/images/job-roof-before-after-1.webp",
+  "/images/job-roof-after-1.webp",
 ];
 
 const reviews = [
@@ -343,7 +343,7 @@ export default function RoofCleaningLP() {
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/manus-storage/srqwash-logo_original.png"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/srqwash-logo-mDqoa6B8FmRjZTuyKBeBmy.webp"
               alt="SRQ Wash"
               className="h-10 w-auto brightness-0 invert"
               onError={(e) => {
@@ -545,7 +545,7 @@ export default function RoofCleaningLP() {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/manus-storage/job-roof-before-after-1_03c581b1.webp"
+                src="/images/job-roof-before-after-1.webp"
                 alt="Before and after soft wash roof cleaning Sarasota FL"
                 className="w-full h-full object-cover"
               />
@@ -593,7 +593,7 @@ export default function RoofCleaningLP() {
               <div className="relative">
                 <div className="w-64 h-64 rounded-2xl overflow-hidden shadow-xl bg-slate-100">
                   <img
-                    src="/manus-storage/owner-photo_63d586ce.webp"
+                    src="/images/owner-photo.webp"
                     alt="Tom — Owner of SRQ Wash"
                     className="w-full h-full object-contain"
                   />
@@ -689,7 +689,7 @@ export default function RoofCleaningLP() {
       <section
         className="py-16 px-4 text-center relative"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.88), rgba(15,23,42,0.88)), url('/manus-storage/job-roof-cleaning-2_60119e61.webp')`,
+          backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.88), rgba(15,23,42,0.88)), url('/images/job-roof-cleaning-2.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

@@ -295,10 +295,10 @@ export default function ServicePage({ serviceId }: ServicePageProps) {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { src: "/manus-storage/job-roof-cleaning-1_3cdf5e49.webp", alt: "Soft wash roof cleaning in Lakewood Ranch" },
-              { src: "/manus-storage/job-roof-before-after-1_68f4e192.webp", alt: "Tile roof before and after soft wash" },
-              { src: "/manus-storage/job-roof-after-1_90c9f27b.webp", alt: "Clean tile roof after professional soft wash" },
-              { src: "/manus-storage/job-roof-before-after-2_d8dd2e1a.webp", alt: "Roof cleaning results in Sarasota" },
+              { src: "/images/job-roof-cleaning-1.webp", alt: "Soft wash roof cleaning in Lakewood Ranch" },
+              { src: "/images/job-roof-before-after-1.webp", alt: "Tile roof before and after soft wash" },
+              { src: "/images/job-roof-after-1.webp", alt: "Clean tile roof after professional soft wash" },
+              { src: "/images/job-roof-before-after-2.webp", alt: "Roof cleaning results in Sarasota" },
             ].map(({ src, alt }, i) => (
               <div key={i} className="relative overflow-hidden rounded-xl aspect-square group">
                 <img

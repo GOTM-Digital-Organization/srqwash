@@ -258,7 +258,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <img
-                src="/manus-storage/truck-trailer-1_7192309a.webp"
+                src="/images/truck-trailer-1.webp"
                 alt="SRQ Wash truck and trailer at a Lakewood Ranch home"
                 className="rounded-xl shadow-2xl w-full object-cover h-[500px]"
               />
@@ -546,14 +546,14 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {[
-              { src: "/manus-storage/job-roof-cleaning-1_3cdf5e49.webp", alt: "Soft wash roof cleaning in progress, Lakewood Ranch" },
-              { src: "/manus-storage/job-roof-cleaning-2_c66b2d1d.webp", alt: "Roof cleaning with soft wash equipment, Sarasota" },
-              { src: "/manus-storage/job-roof-before-after-1_68f4e192.webp", alt: "Tile roof before and after soft wash cleaning" },
-              { src: "/manus-storage/job-roof-before-after-2_d8dd2e1a.webp", alt: "Roof cleaning before and after comparison" },
-              { src: "/manus-storage/job-roof-after-1_90c9f27b.webp", alt: "Clean tile roof after soft wash treatment" },
-              { src: "/manus-storage/job-roof-after-2_67294a74.webp", alt: "Restored roof tiles after professional cleaning" },
-              { src: "/manus-storage/truck-trailer-1_7192309a.webp", alt: "SRQ Wash truck and trailer at a Lakewood Ranch home" },
-              { src: "/manus-storage/trailer-closeup_8cbd8513.webp", alt: "SRQ Wash professional pressure washing trailer setup" },
+              { src: "/images/job-roof-cleaning-1.webp", alt: "Soft wash roof cleaning in progress, Lakewood Ranch" },
+              { src: "/images/job-roof-cleaning-2.webp", alt: "Roof cleaning with soft wash equipment, Sarasota" },
+              { src: "/images/job-roof-before-after-1.webp", alt: "Tile roof before and after soft wash cleaning" },
+              { src: "/images/job-roof-before-after-2.webp", alt: "Roof cleaning before and after comparison" },
+              { src: "/images/job-roof-after-1.webp", alt: "Clean tile roof after soft wash treatment" },
+              { src: "/images/job-roof-after-2.webp", alt: "Restored roof tiles after professional cleaning" },
+              { src: "/images/truck-trailer-1.webp", alt: "SRQ Wash truck and trailer at a Lakewood Ranch home" },
+              { src: "/images/trailer-closeup.webp", alt: "SRQ Wash professional pressure washing trailer setup" },
             ].map(({ src, alt }, i) => (
               <div
                 key={i}

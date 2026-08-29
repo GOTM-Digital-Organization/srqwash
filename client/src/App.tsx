@@ -22,6 +22,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import RoofCleaningLP from "./pages/RoofCleaningLP";
+import PressureWashingLP from "./pages/PressureWashingLP";
 import ThankYou from "./pages/ThankYou";
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -29,6 +30,7 @@ function Router() {
     <Switch>
       {/* Google Ads Landing Pages — no nav, conversion-only */}
       <Route path="/sarasota-roof-cleaning-lp" component={RoofCleaningLP} />
+      <Route path="/lakewood-ranch-pressure-washing-lp" component={PressureWashingLP} />
 
       {/* Thank You page — shown after form submission */}
       <Route path="/thank-you" component={ThankYou} />

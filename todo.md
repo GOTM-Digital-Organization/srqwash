@@ -32,4 +32,4 @@
 - [x] Install the approved Google Ads tag in the shared site head for all public pages
 - [x] Add Google forwarding-number call measurement for the SRQ Wash phone number, avoiding click-only call counts
 - [x] Publish the approved Google Ads tracking update through GitHub main and verify the live SRQ Wash homepage serves the tag
-- [ ] Recheck Google Ads tag detection and the two new conversion actions after Google completes its initial processing window
+- [x] Independently verify production tag detection with Google Tag Assistant; Google Ads Diagnostics remains browser-blocked but may take up to 48 hours to show new action status

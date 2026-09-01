@@ -40,6 +40,8 @@ On September 1, 2026, the active SRQ Wash Google Ads account received two new pr
 
 Do not replace these settings with the removed **Click to call** action or with Google-hosted lead-form actions. Keep the three `gtag("config", ...)` calls in `client/index.html` together so the Google Ads, GA4, and forwarding-number configurations all load across every public route.
 
+Google Tag Assistant independently verified the production `https://srqwash.com` homepage on September 1, 2026. It identified the **SRQWash Website** on-page Google tag, confirmed the `G-G4RHGB5FV6` GA4 destination and both Google Ads destinations, including `AW-10941454860`, and recorded page-view plus remarketing hits. Google Ads Diagnostics was not available in the connected browser because it reported an ad-blocker warning, but the independent production validation confirms the tag is loading and sending hits correctly.
+
 ## Netlify compatibility requirements
 
 The Netlify build depends on `client/public/_redirects` containing the SPA fallback rule:

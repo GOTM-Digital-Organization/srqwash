@@ -42,6 +42,22 @@ Do not replace these settings with the removed **Click to call** action or with 
 
 Google Tag Assistant independently verified the production `https://srqwash.com` homepage on September 1, 2026. It identified the **SRQWash Website** on-page Google tag, confirmed the `G-G4RHGB5FV6` GA4 destination and both Google Ads destinations, including `AW-10941454860`, and recorded page-view plus remarketing hits. Google Ads Diagnostics was not available in the connected browser because it reported an ad-blocker warning, but the independent production validation confirms the tag is loading and sending hits correctly.
 
+## Google Ads campaign launch safeguard
+
+| Item | Verified configuration |
+|---|---|
+| Campaign | **srqwash manus 1** (`24203417267`) |
+| Status | **Paused** with $0.00 recorded cost at final verification |
+| Average daily budget | $51.01/day |
+| Hours and service locations | Monday–Saturday, 7:00 AM–7:00 PM Eastern; Bradenton, Lakewood Ranch, Sarasota, and Venice |
+| Campaign-specific bidding goals | Website source only for Submit lead forms and Phone call leads |
+| Excluded campaign bidding sources | Google-hosted lead form and Call from Ads sources |
+| Search safeguards | One roof-cleaning ad group, 16 exact/phrase keywords, 48 broad campaign-level negatives, Search Partners and Display off |
+
+The campaign was changed from account-default conversion goals to **campaign-specific** goals so it uses only the Website source in each selected goal group. This preserves the intended measurement path: successful website forms and forwarding-number website calls, rather than Google-hosted forms or unrelated existing ad-call actions.
+
+Do not apply Google Ads recommendations for Display Expansion or broad-match keywords without a separate review. Do not enable campaign `24203417267` unless Tom gives distinct approval that acknowledges it will become eligible to spend at the $51.01/day average budget. The current campaign record is in `GOOGLE_ADS_CAMPAIGN_PLAN.md`.
+
 ## Netlify compatibility requirements
 
 The Netlify build depends on `client/public/_redirects` containing the SPA fallback rule:

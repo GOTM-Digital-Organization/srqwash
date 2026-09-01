@@ -33,3 +33,10 @@
 - [x] Add Google forwarding-number call measurement for the SRQ Wash phone number, avoiding click-only call counts
 - [x] Publish the approved Google Ads tracking update through GitHub main and verify the live SRQ Wash homepage serves the tag
 - [x] Independently verify production tag detection with Google Tag Assistant; Google Ads Diagnostics remains browser-blocked but may take up to 48 hours to show new action status
+- [x] Confirm campaign name srqwash manus 1, $51/day budget, roof-cleaning priority, four-city targeting, business-hour schedule, and website call/form conversion goals
+- [x] Audit existing Google Ads campaigns to avoid overlapping targeting, duplicate ads, or conflicting conversion goals
+- [x] Prepare a conversion-focused Search campaign structure with ads, keywords, negative keywords, and assets for approval
+- [x] Create campaign srqwash manus 1 (ID 24203417267), immediately pause it with zero recorded cost, and apply 48 campaign-level negative keywords before activation review
+- [x] Set campaign-specific conversion goals to Website-only sources for form submissions and forwarding-number calls, excluding Google-hosted lead forms and Calls From Ads sources
+- [x] Update the campaign blueprint and status record with the final budget, paused state, actual roof-only structure, safeguards, and activation gate
+- [x] Update the integration guide with the campaign identifier and website-only bidding-goal safeguard

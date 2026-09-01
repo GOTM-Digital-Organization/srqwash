@@ -31,4 +31,5 @@
 - [x] Obtain exact Google Ads conversion labels: lead form dJqACPnlgewcEIy0peEo and website call CqIfCPzlgewcEIy0peEo
 - [x] Install the approved Google Ads tag in the shared site head for all public pages
 - [x] Add Google forwarding-number call measurement for the SRQ Wash phone number, avoiding click-only call counts
-- [ ] Verify tag detection and publish the approved tracking update through GitHub main
+- [x] Publish the approved Google Ads tracking update through GitHub main and verify the live SRQ Wash homepage serves the tag
+- [ ] Recheck Google Ads tag detection and the two new conversion actions after Google completes its initial processing window

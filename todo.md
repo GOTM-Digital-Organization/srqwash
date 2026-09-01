@@ -40,3 +40,13 @@
 - [x] Set campaign-specific conversion goals to Website-only sources for form submissions and forwarding-number calls, excluding Google-hosted lead forms and Calls From Ads sources
 - [x] Update the campaign blueprint and status record with the final budget, paused state, actual roof-only structure, safeguards, and activation gate
 - [x] Update the integration guide with the campaign identifier and website-only bidding-goal safeguard
+- [x] Add a second all-services ad group to paused campaign 24203417267 while retaining the existing roof-cleaning ad group
+- [x] Configure all-services ads and keywords to use the new /lakewood-ranch-pressure-washing-lp landing page
+- [ ] Verify two-ad-group keyword and landing-page separation, campaign safeguards, and continued paused zero-spend status — superseded before standalone verification by the approved four-ad-group rebuild
+- [ ] Update campaign records for the verified two-ad-group configuration and save a checkpoint — superseded by the final four-ad-group campaign record
+- [x] Rebuild paused campaign 24203417267 as the full-service replacement using tightly themed roof, house/pressure, driveway/concrete, pool-cage/lanai, and paver service groups where applicable
+- [x] Configure high-intent exact/phrase keyword sets, service-specific ads, and appropriate roof versus all-services landing-page mappings
+- [x] Verify the rebuilt campaign retains Website-only conversion goals, four-city presence targeting, business-hour schedule, Search-only networks, negative-keyword protection, zero spend, and paused status
+- [x] Verify and document the final four-ad-group full-service campaign state, 52 enabled keywords, 48 campaign negatives, approved location/schedule safeguards, and paused zero-spend status
+- [x] Update the campaign record, status summary, and integration guide for the final four-ad-group rebuild
+- [ ] Obtain separate approval before pausing Campaign 05/12/26 or enabling the rebuilt campaign

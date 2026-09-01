@@ -52,11 +52,13 @@ Google Tag Assistant independently verified the production `https://srqwash.com`
 | Hours and service locations | Monday–Saturday, 7:00 AM–7:00 PM Eastern; Bradenton, Lakewood Ranch, Sarasota, and Venice |
 | Campaign-specific bidding goals | Website source only for Submit lead forms and Phone call leads |
 | Excluded campaign bidding sources | Google-hosted lead form and Call from Ads sources |
-| Search safeguards | One roof-cleaning ad group, 16 exact/phrase keywords, 48 broad campaign-level negatives, Search Partners and Display off |
+| Search safeguards | Four service-specific ad groups, 52 enabled exact/phrase keywords, 48 broad campaign-level negatives, Search Partners and Display off |
+| Landing-page mapping | Roof group → `/sarasota-roof-cleaning-lp`; House Washing, Pool Cage & Lanai, and Driveway & Concrete → `/lakewood-ranch-pressure-washing-lp` |
+| Ad status | Roof RSA is Average strength; three new non-roof RSAs are Pending review; campaign remains paused |
 
 The campaign was changed from account-default conversion goals to **campaign-specific** goals so it uses only the Website source in each selected goal group. This preserves the intended measurement path: successful website forms and forwarding-number website calls, rather than Google-hosted forms or unrelated existing ad-call actions.
 
-Do not apply Google Ads recommendations for Display Expansion or broad-match keywords without a separate review. Do not enable campaign `24203417267` unless Tom gives distinct approval that acknowledges it will become eligible to spend at the $51.01/day average budget. The current campaign record is in `GOOGLE_ADS_CAMPAIGN_PLAN.md`.
+The completed replacement structure is Roof Cleaning, House Washing, Pool Cage & Lanai, and Driveway & Concrete. The latter three groups use the new all-services landing page, while roof keywords retain the roof-specific page for stronger query-to-page relevance. Do not apply Google Ads recommendations for Display Expansion or broad-match keywords without a separate review. Do not enable campaign `24203417267` unless Tom gives distinct approval that acknowledges it will become eligible to spend at the $51.01/day average budget and the three new ads have completed Google review. The current campaign record is in `GOOGLE_ADS_CAMPAIGN_PLAN.md`.
 
 ## Netlify compatibility requirements
 

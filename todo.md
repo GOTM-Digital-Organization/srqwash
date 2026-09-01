@@ -22,3 +22,8 @@
 - [x] Update buildLocalBusinessSchema to embed Review array and reference them in aggregateRating
 - [x] Build dynamic /sitemap.xml server endpoint listing all service, area, and neighborhood URLs
 - [x] Validate JSON-LD output via Google Rich Results Test
+- [x] Inspect existing GitHub repository, Netlify site, project configuration, and local git state without changes
+- [x] Compare Manus project against the GitHub main branch and live Netlify site, preserving all SEO routes
+- [x] Connect approved GitHub and Netlify integrations without creating, renaming, replacing, or deleting resources
+- [x] Document durable GitHub and Netlify links plus the approved release workflow for future updates
+- [x] Verify the existing main branch publication path to the specified Netlify site

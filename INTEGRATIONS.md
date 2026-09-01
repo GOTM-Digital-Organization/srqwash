@@ -27,6 +27,19 @@ The production domain serves that landing page, confirming the current GitHub `m
 6. **Let Netlify publish automatically.** The production path is GitHub `main` to the existing `srqwash` Netlify project. Do not manually deploy, recreate the site, alter domains, or change DNS as part of ordinary releases.
 7. **Verify production.** After the deployment completes, check both the homepage and one affected deep link on `https://srqwash.com`.
 
+## Google Ads and GA4 conversion tracking
+
+| Item | Approved configuration | Implementation |
+|---|---|---|
+| Google Ads destination | `AW-10941454860` — active SRQ Wash account | Shared Google tag in `client/index.html` |
+| Google Analytics destination | `G-G4RHGB5FV6` — SRQWash Website stream | Shared Google tag in `client/index.html` |
+| Quote-form conversion | `AW-10941454860/dJqACPnlgewcEIy0peEo` | Fires only after `trpc.contact.submit` succeeds on the Contact, roof-cleaning, and multi-service landing-page forms |
+| Website-call conversion | `AW-10941454860/CqIfCPzlgewcEIy0peEo` | Google forwarding-number configuration for the displayed phone number `(941) 229-2355` |
+
+On September 1, 2026, the active SRQ Wash Google Ads account received two new primary website conversion actions: **Submit lead form** and **Call ((941) 229-2355)**. The lead conversion is intentionally triggered only after the server accepts a quote request, which prevents page views and failed submissions from being counted as leads. The phone configuration is intentionally a Google forwarding-number measurement, which captures completed Google Ads-attributed calls instead of merely counting phone-link taps.
+
+Do not replace these settings with the removed **Click to call** action or with Google-hosted lead-form actions. Keep the three `gtag("config", ...)` calls in `client/index.html` together so the Google Ads, GA4, and forwarding-number configurations all load across every public route.
+
 ## Netlify compatibility requirements
 
 The Netlify build depends on `client/public/_redirects` containing the SPA fallback rule:

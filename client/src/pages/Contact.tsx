@@ -12,6 +12,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useJsonLd } from "@/hooks/useJsonLd";
 import { buildLocalBusinessSchema } from "@/lib/schema";
+import { trackQuoteFormSubmission } from "@/lib/googleAds";
 
 export default function Contact() {
   useJsonLd(buildLocalBusinessSchema());
@@ -29,6 +30,7 @@ export default function Contact() {
 
   const submitContact = trpc.contact.submit.useMutation({
     onSuccess: () => {
+      trackQuoteFormSubmission();
       navigate("/thank-you");
     },
     onError: (err) => {

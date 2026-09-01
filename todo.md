@@ -27,3 +27,8 @@
 - [x] Connect approved GitHub and Netlify integrations without creating, renaming, replacing, or deleting resources
 - [x] Document durable GitHub and Netlify links plus the approved release workflow for future updates
 - [x] Verify the existing main branch publication path to the specified Netlify site
+- [x] Verify active SRQ Wash Google Ads tag AW-10941454860 from the authenticated Google Ads installation snippet
+- [x] Obtain exact Google Ads conversion labels: lead form dJqACPnlgewcEIy0peEo and website call CqIfCPzlgewcEIy0peEo
+- [x] Install the approved Google Ads tag in the shared site head for all public pages
+- [x] Add Google forwarding-number call measurement for the SRQ Wash phone number, avoiding click-only call counts
+- [ ] Verify tag detection and publish the approved tracking update through GitHub main

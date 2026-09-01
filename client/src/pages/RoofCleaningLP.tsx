@@ -12,6 +12,7 @@ import { useLocation } from "wouter";
 import { Phone, CheckCircle2, Star, Shield, Clock, Award, ChevronDown, MapPin, AlertTriangle } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { trackQuoteFormSubmission } from "@/lib/googleAds";
 
 const PHONE = "+19412292355";
 const PHONE_DISPLAY = "(941) 229-2355";
@@ -144,7 +145,10 @@ function QuoteForm({ phone, phoneDisplay }: { phone: string; phoneDisplay: strin
   const [, navigate] = useLocation();
 
   const submitContact = trpc.contact.submit.useMutation({
-    onSuccess: () => navigate("/thank-you"),
+    onSuccess: () => {
+      trackQuoteFormSubmission();
+      navigate("/thank-you");
+    },
     onError: () => toast.error("Failed to send. Please call us directly."),
   });
 

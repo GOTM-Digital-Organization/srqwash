@@ -47,18 +47,19 @@ Google Tag Assistant independently verified the production `https://srqwash.com`
 | Item | Verified configuration |
 |---|---|
 | Campaign | **srqwash manus 1** (`24203417267`) |
-| Status | **Paused** with $0.00 recorded cost at final verification |
+| Status | **Enabled; Eligible (Limited)** with $0.00 recorded cost in the August 3–September 1, 2026 reporting view |
 | Average daily budget | $51.01/day |
-| Hours and service locations | Monday–Saturday, 7:00 AM–7:00 PM Eastern; Bradenton, Lakewood Ranch, Sarasota, and Venice |
-| Campaign-specific bidding goals | Website source only for Submit lead forms and Phone call leads |
-| Excluded campaign bidding sources | Google-hosted lead form and Call from Ads sources |
+| Hours and service locations | Monday–Saturday, 7:00 AM–7:00 PM Eastern; Bradenton, Lakewood Ranch, Sarasota, and Venice; presence or interest targeting for seasonal homeowners (manually confirmed by Tom on September 2, 2026) |
+| Campaign-specific bidding goals | Website source for Submit lead forms; Website and 30-second Calls from Ads sources for Phone call leads |
+| Excluded campaign bidding source | Google-hosted lead form |
 | Search safeguards | Four service-specific ad groups, 52 enabled exact/phrase keywords, 48 broad campaign-level negatives, Search Partners and Display off |
 | Landing-page mapping | Roof group → `/sarasota-roof-cleaning-lp`; House Washing, Pool Cage & Lanai, and Driveway & Concrete → `/lakewood-ranch-pressure-washing-lp` |
-| Ad status | Roof RSA is Average strength; three new non-roof RSAs are Pending review; campaign remains paused |
+| Direct-call asset | Campaign-level `(941) 229-2355` call asset linked to the 30-second `Calls from Smart Campaign Ads` action; Pending — Under review at the post-save check |
+| Ad status | Roof RSA was previously Average strength; monitor all ads and the new call asset for current review status while the campaign is live |
 
-The campaign was changed from account-default conversion goals to **campaign-specific** goals so it uses only the Website source in each selected goal group. This preserves the intended measurement path: successful website forms and forwarding-number website calls, rather than Google-hosted forms or unrelated existing ad-call actions.
+The campaign was changed from account-default conversion goals to **campaign-specific** goals. It uses Website form submissions, Website forwarding-number calls, and the existing Primary **Calls from Ads** conversion action with a 30-second minimum duration. A campaign-level call asset for `(941) 229-2355` was created and explicitly linked to that action on September 2, 2026; it is pending Google review. This supplies Google Ads with three meaningful lead paths for bidding while preserving the Google-hosted lead-form exclusion.
 
-The completed replacement structure is Roof Cleaning, House Washing, Pool Cage & Lanai, and Driveway & Concrete. The latter three groups use the new all-services landing page, while roof keywords retain the roof-specific page for stronger query-to-page relevance. Do not apply Google Ads recommendations for Display Expansion or broad-match keywords without a separate review. Do not enable campaign `24203417267` unless Tom gives distinct approval that acknowledges it will become eligible to spend at the $51.01/day average budget and the three new ads have completed Google review. The current campaign record is in `GOOGLE_ADS_CAMPAIGN_PLAN.md`.
+The completed replacement structure is Roof Cleaning, House Washing, Pool Cage & Lanai, and Driveway & Concrete. The latter three groups use the new all-services landing page, while roof keywords retain the roof-specific page for stronger query-to-page relevance. The campaign is enabled, while `Campaign 05/12/26` and `Leads-Performance Max-1` were verified paused in the account campaign table on September 2, 2026. Do not apply Google Ads recommendations for Display Expansion, Search Partners, or broad-match keywords without a separate review. Monitor current ad and call-asset review/policy status, search terms, and qualified-lead quality before material optimization changes. The current campaign record is in `GOOGLE_ADS_CAMPAIGN_PLAN.md`.
 
 ## Netlify compatibility requirements
 

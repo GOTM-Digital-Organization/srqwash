@@ -49,4 +49,14 @@
 - [x] Verify the rebuilt campaign retains Website-only conversion goals, four-city presence targeting, business-hour schedule, Search-only networks, negative-keyword protection, zero spend, and paused status
 - [x] Verify and document the final four-ad-group full-service campaign state, 52 enabled keywords, 48 campaign negatives, approved location/schedule safeguards, and paused zero-spend status
 - [x] Update the campaign record, status summary, and integration guide for the final four-ad-group rebuild
-- [ ] Obtain separate approval before pausing Campaign 05/12/26 or enabling the rebuilt campaign
+- [x] Obtain separate approval before pausing Campaign 05/12/26 or enabling the rebuilt campaign — Tom chose to manage the activation change himself; the new campaign is now enabled
+- [x] Change campaign 24203417267 location option to include people interested in the four Florida service areas for seasonal-homeowner searches
+- [x] Record Tom’s confirmed interest-based location-targeting change while preserving all other campaign safeguards; the redesigned interface did not expose a separate read-only control for independent confirmation
+- [x] Restore campaign 24203417267 from account-default goals to campaign-specific Website-only form and forwarding-number call conversion sources
+- [ ] Verify the live campaign retains Website-only conversion goals and the approved seasonal-homeowner location-interest option — superseded by the authorized three-source call-goal configuration
+- [x] Update campaign 24203417267 to use Website form submissions, Website calls, and the verified 30-second Calls from ads action while excluding Google-hosted lead forms
+- [x] Verify and document the finalized three-source conversion-goal configuration alongside the approved seasonal-homeowner targeting option
+- [x] Confirm the current status of Campaign 05/12/26 after Tom elected to manage it personally; the account campaign table now shows it paused
+- [x] Add a campaign-level call asset for (941) 229-2355 with Google call reporting and retain the 30-second direct-call qualification threshold
+- [x] Verify the campaign-level call asset exists with (941) 229-2355 and the selected 30-second Calls from Smart Campaign Ads conversion action; Google lists the asset as Pending review
+- [x] Update campaign records to reflect the live call asset, the verified paused old Search and Performance Max campaigns, and the limited independent verification available for location interest

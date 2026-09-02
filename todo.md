@@ -42,8 +42,8 @@
 - [x] Update the integration guide with the campaign identifier and website-only bidding-goal safeguard
 - [x] Add a second all-services ad group to paused campaign 24203417267 while retaining the existing roof-cleaning ad group
 - [x] Configure all-services ads and keywords to use the new /lakewood-ranch-pressure-washing-lp landing page
-- [ ] Verify two-ad-group keyword and landing-page separation, campaign safeguards, and continued paused zero-spend status — superseded before standalone verification by the approved four-ad-group rebuild
-- [ ] Update campaign records for the verified two-ad-group configuration and save a checkpoint — superseded by the final four-ad-group campaign record
+- [x] Verify two-ad-group keyword and landing-page separation, campaign safeguards, and continued paused zero-spend status — superseded before standalone verification by the approved four-ad-group rebuild, which was verified and documented
+- [x] Update campaign records for the verified two-ad-group configuration and save a checkpoint — superseded by the final four-ad-group campaign record and subsequent checkpoints
 - [x] Rebuild paused campaign 24203417267 as the full-service replacement using tightly themed roof, house/pressure, driveway/concrete, pool-cage/lanai, and paver service groups where applicable
 - [x] Configure high-intent exact/phrase keyword sets, service-specific ads, and appropriate roof versus all-services landing-page mappings
 - [x] Verify the rebuilt campaign retains Website-only conversion goals, four-city presence targeting, business-hour schedule, Search-only networks, negative-keyword protection, zero spend, and paused status
@@ -53,7 +53,7 @@
 - [x] Change campaign 24203417267 location option to include people interested in the four Florida service areas for seasonal-homeowner searches
 - [x] Record Tom’s confirmed interest-based location-targeting change while preserving all other campaign safeguards; the redesigned interface did not expose a separate read-only control for independent confirmation
 - [x] Restore campaign 24203417267 from account-default goals to campaign-specific Website-only form and forwarding-number call conversion sources
-- [ ] Verify the live campaign retains Website-only conversion goals and the approved seasonal-homeowner location-interest option — superseded by the authorized three-source call-goal configuration
+- [x] Verify the live campaign retains Website-only conversion goals and the approved seasonal-homeowner location-interest option — superseded by the verified three-source call-goal configuration and Tom-confirmed seasonal-targeting update
 - [x] Update campaign 24203417267 to use Website form submissions, Website calls, and the verified 30-second Calls from ads action while excluding Google-hosted lead forms
 - [x] Verify and document the finalized three-source conversion-goal configuration alongside the approved seasonal-homeowner targeting option
 - [x] Confirm the current status of Campaign 05/12/26 after Tom elected to manage it personally; the account campaign table now shows it paused

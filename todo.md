@@ -60,3 +60,5 @@
 - [x] Add a campaign-level call asset for (941) 229-2355 with Google call reporting and retain the 30-second direct-call qualification threshold
 - [x] Verify the campaign-level call asset exists with (941) 229-2355 and the selected 30-second Calls from Smart Campaign Ads conversion action; Google lists the asset as Pending review
 - [x] Update campaign records to reflect the live call asset, the verified paused old Search and Performance Max campaigns, and the limited independent verification available for location interest
+- [x] Diagnose srqwash.com DNS and public availability without modifying DNS, Netlify, or domain ownership unless explicitly approved — public DNS, TLS, apex, www redirect, Netlify endpoint, and browser rendering all returned successfully
+- [x] Verify public recovery and document the diagnosed availability issue — no global DNS or hosting outage reproduced; request the user’s browser error if the issue persists locally

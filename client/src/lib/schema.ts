@@ -13,7 +13,7 @@ const BUSINESS_IDENTITY = {
   url: BASE_URL,
   logo: `https://d2xsxph8kpxj0f.cloudfront.net/310419663028316757/S8hJyhgpkGHR2RfqK8Ywnb/srqwash-logo-mDqoa6B8FmRjZTuyKBeBmy.webp`,
   image: `${BASE_URL}/images/job-roof-cleaning-1.webp`,
-  telephone: "+19412292355",
+  telephone: "+19414004496",
   email: "srqwash@gmail.com",
   priceRange: "$$",
   address: {
@@ -164,6 +164,52 @@ export function buildServicePageSchema(service: {
   };
 
   return [serviceSchema, businessSchema, breadcrumbSchema];
+}
+
+// ── Promotional offer page — Service + Offer + Breadcrumb ───────────────────
+
+export function buildRoofCleaningOfferSchema() {
+  const offerUrl = `${BASE_URL}/100-off-soft-wash-roof-cleaning`;
+  const serviceUrl = `${BASE_URL}/roof-cleaning`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Offer",
+      "@id": `${offerUrl}#offer`,
+      name: "$100 Off Soft Wash Roof Cleaning",
+      description:
+        "$100 off a qualifying residential soft wash roof-cleaning service from SRQ Wash. One offer per residential property; cannot be combined with other offers.",
+      url: offerUrl,
+      availability: "https://schema.org/InStock",
+      category: "Roof cleaning promotional offer",
+      itemOffered: {
+        "@type": "Service",
+        "@id": `${serviceUrl}#service`,
+        name: "Soft Wash Roof Cleaning",
+        provider: { "@id": `${BASE_URL}/#business` },
+        areaServed: [
+          { "@type": "City", name: "Lakewood Ranch", containedInPlace: { "@type": "State", name: "Florida" } },
+          { "@type": "City", name: "Sarasota", containedInPlace: { "@type": "State", name: "Florida" } },
+          { "@type": "City", name: "Bradenton", containedInPlace: { "@type": "State", name: "Florida" } },
+          { "@type": "City", name: "Venice", containedInPlace: { "@type": "State", name: "Florida" } },
+        ],
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      ...BUSINESS_IDENTITY,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+        { "@type": "ListItem", position: 2, name: "Roof Cleaning", item: serviceUrl },
+        { "@type": "ListItem", position: 3, name: "$100 Off Soft Wash Roof Cleaning", item: offerUrl },
+      ],
+    },
+  ];
 }
 
 // ── City service area page — LocalBusiness (areaServed=city) + Breadcrumb ─────

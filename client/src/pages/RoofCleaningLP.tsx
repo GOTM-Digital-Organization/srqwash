@@ -4,7 +4,7 @@
  * Design: Florida Power — Slate Black + Pressure Blue + Safety Orange
  * Purpose: Maximum conversion for Google Search Ads targeting Sarasota & Lakewood Ranch roof cleaning
  * NO site navigation — single-purpose conversion page
- * All CTAs dial tel:+19412292355
+ * All CTAs dial tel:+19414004496
  */
 
 import { useEffect, useState } from "react";
@@ -14,8 +14,8 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { trackQuoteFormSubmission } from "@/lib/googleAds";
 
-const PHONE = "+19412292355";
-const PHONE_DISPLAY = "(941) 229-2355";
+const PHONE = "+19414004496";
+const PHONE_DISPLAY = "(941) 400-4496";
 
 const roofPhotos = [
   "/images/job-roof-cleaning-1.webp",

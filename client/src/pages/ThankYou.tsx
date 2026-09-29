@@ -60,10 +60,10 @@ export default function ThankYou() {
 
           {/* Call CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <a href="tel:+19412292355">
+            <a href="tel:+19414004496">
               <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold uppercase tracking-wide w-full sm:w-auto">
                 <Phone className="w-4 h-4 mr-2" />
-                Call (941) 229-2355
+                Call (941) 400-4496
               </Button>
             </a>
             <Link href="/">

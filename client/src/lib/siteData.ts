@@ -9,9 +9,9 @@ export const SITE = {
   address: "9040 Town Center Pkwy #102, Lakewood Ranch FL 34202",
   email: "srqwash@gmail.com",
   // Display phone
-  phoneDisplay: "(941) 229-2355",
+  phoneDisplay: "(941) 400-4496",
   // Call button phone (used for tel: links)
-  phoneCall: "9412292355",
+  phoneCall: "9414004496",
   rating: "5.0",
   reviewCount: "48",
   hours: [

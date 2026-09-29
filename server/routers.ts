@@ -88,7 +88,7 @@ export const appRouter = router({
                       ${input.phone ? `<p style="color: #f8fafc; margin: 6px 0;"><strong>Phone:</strong> ${input.phone}</p>` : ""}
                     </div>
                     <p style="color: #cbd5e1; line-height: 1.6;">Need a faster response? Give us a call directly:</p>
-                    <a href="tel:+19412292355" style="display: inline-block; background: #f97316; color: white; font-weight: bold; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-size: 16px; margin-bottom: 24px;">(941) 229-2355</a>
+                    <a href="tel:+19414004496" style="display: inline-block; background: #f97316; color: white; font-weight: bold; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-size: 16px; margin-bottom: 24px;">(941) 400-4496</a>
                     <hr style="border: none; border-top: 1px solid #334155; margin: 24px 0;" />
                     <p style="color: #64748b; font-size: 13px; text-align: center;">SRQ Wash · Lakewood Ranch, FL · Licensed &amp; Insured<br/>5.0 Stars · 48 Google Reviews</p>
                   </div>

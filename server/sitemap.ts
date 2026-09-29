@@ -18,6 +18,7 @@ export const STATIC_PAGES = [
   { loc: "/faqs",          changefreq: "monthly", priority: "0.6" },
   { loc: "/contact-us",    changefreq: "monthly", priority: "0.7" },
   { loc: "/roof-cleaning-sarasota", changefreq: "monthly", priority: "0.8" },
+  { loc: "/100-off-soft-wash-roof-cleaning", changefreq: "weekly", priority: "0.8" },
 ];
 
 // ── Derived URL sets (from shared siteData) ───────────────────────────────────

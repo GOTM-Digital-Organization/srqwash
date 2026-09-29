@@ -7,7 +7,7 @@
  *          soft wash roof cleaning, house washing, pool cage/lanai/pool deck
  *          cleaning, and driveway & concrete cleaning.
  * NO site navigation — single-purpose conversion page
- * All CTAs dial tel:+19412292355
+ * All CTAs dial tel:+19414004496
  */
 
 import { useEffect, useState } from "react";
@@ -17,8 +17,8 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { trackQuoteFormSubmission } from "@/lib/googleAds";
 
-const PHONE = "+19412292355";
-const PHONE_DISPLAY = "(941) 229-2355";
+const PHONE = "+19414004496";
+const PHONE_DISPLAY = "(941) 400-4496";
 
 const services = [
   {
@@ -367,7 +367,7 @@ export default function PressureWashingLP() {
     if (meta) {
       meta.setAttribute(
         "content",
-        "Top-rated pressure washing & soft washing in Lakewood Ranch, Bradenton & Sarasota FL. Roof cleaning, house washing, pool cage & driveway cleaning. 5.0 stars. Free quotes: (941) 229-2355."
+        "Top-rated pressure washing & soft washing in Lakewood Ranch, Bradenton & Sarasota FL. Roof cleaning, house washing, pool cage & driveway cleaning. 5.0 stars. Free quotes: (941) 400-4496."
       );
     }
     const handleScroll = () => setShowStickyBar(window.scrollY > 300);

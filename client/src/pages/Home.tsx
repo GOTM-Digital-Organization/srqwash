@@ -207,6 +207,20 @@ export default function Home() {
       {/* ── TRUST BAR ── */}
       <TrustBar />
 
+      {/* ── LIMITED-TIME ROOF CLEANING OFFER ── */}
+      <section className="bg-[#FFF7ED] border-y border-orange-200 py-5">
+        <div className="container flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange-600">Limited-Time Roof Cleaning Special</p>
+            <p className="mt-1 text-lg font-extrabold text-[#111827]">Save $100 on professional soft wash roof cleaning.</p>
+          </div>
+          <Link href="/100-off-soft-wash-roof-cleaning" className="btn-orange whitespace-nowrap">
+            Claim the $100 Offer
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
       {/* ── ABOUT INTRO ── */}
       <section className="py-20 bg-white">
         <div className="container">

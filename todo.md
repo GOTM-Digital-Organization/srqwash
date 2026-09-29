@@ -62,3 +62,8 @@
 - [x] Update campaign records to reflect the live call asset, the verified paused old Search and Performance Max campaigns, and the limited independent verification available for location interest
 - [x] Diagnose srqwash.com DNS and public availability without modifying DNS, Netlify, or domain ownership unless explicitly approved — public DNS, TLS, apex, www redirect, Netlify endpoint, and browser rendering all returned successfully
 - [x] Verify public recovery and document the diagnosed availability issue — no global DNS or hosting outage reproduced; request the user’s browser error if the issue persists locally
+- [x] Replace all website source phone displays, tel routes, structured data, email CTA, and Google forwarding-number tag configuration with `(941) 400-4496` / `9414004496`; the old-number search is clean across `client/` and `server/`
+- [x] Build and validate the public `$100 Off Soft Wash Roof Cleaning` landing page at `/100-off-soft-wash-roof-cleaning`, link it from the homepage, include Offer JSON-LD, and add it to the sitemap
+- [x] Prepare a GBP-ready before/after tile-roof image and reusable GBP post title, description, CTA, and landing-page link
+- [ ] Obtain explicit approval before enabling account-wide Google Ads call reporting and creating a campaign-only `(941) 400-4496` direct-call asset linked to the existing 30-second Calls from Ads action; remove/disassociate the former-number asset only after the replacement is verified
+- [ ] Read-only verify the Google Ads website-call conversion action displays/forwards to `(941) 400-4496`, campaign goals remain correct, and the campaign has no active former-number call asset

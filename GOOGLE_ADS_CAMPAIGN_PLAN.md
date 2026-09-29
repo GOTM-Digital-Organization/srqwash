@@ -30,9 +30,9 @@ This is SRQ Wash’s new **full-service Search-campaign replacement**, structure
 | Website-form conversion | `AW-10941454860/dJqACPnlgewcEIy0peEo` |
 | Website-call conversion | `AW-10941454860/CqIfCPzlgewcEIy0peEo` |
 | Direct-ad-call conversion | Existing `Calls from Smart Campaign Ads`; **Primary**, count One, 30-second minimum call duration |
-| Campaign call asset | `(941) 229-2355`, added September 2, 2026 at campaign level; **Pending — Under review** at the post-save check |
+| Campaign call asset | Historical `(941) 229-2355` asset, added September 2, 2026 at campaign level; **Pending — Under review** at the post-save check. After the September 29 phone migration, it is not a valid routing asset for `(941) 400-4496` and requires replacement/disassociation. |
 
-The campaign-specific goal configuration selects the **Website** source for **Submit lead forms**. Under **Phone call leads**, it selects both the **Website** source and **Calls from Ads**. The direct-ad call action requires a 30-second call before counting a conversion, so bidding can learn from meaningful calls directly from the Search ad as well as website calls. The campaign call asset is linked to that specific conversion action. Google-hosted lead forms remain excluded because they bypass the SRQ Wash website workflow.
+The campaign-specific goal configuration selects the **Website** source for **Submit lead forms**. Under **Phone call leads**, it selects both the **Website** source and **Calls from Ads**. The direct-ad call action requires a 30-second call before counting a conversion, so bidding can learn from meaningful calls directly from the Search ad as well as website calls. The historical campaign call asset was linked to that action; it should not be treated as a new-number call path until a replacement `(941) 400-4496` asset is created and verified. Google-hosted lead forms remain excluded because they bypass the SRQ Wash website workflow.
 
 ## Actual ad-group structure
 
@@ -130,7 +130,7 @@ The campaign has **48 verified broad-match negative keywords at campaign level**
 
 The campaign has four responsive Search ads—one per group. At the final paused-build audit, the three new non-roof ads were pending Google review. The campaign is now enabled, so review and policy status should be monitored in the Ads table. No native Google lead form was added.
 
-On September 2, 2026, a campaign-level **Call asset** for `(941) 229-2355` was created and assigned to `Calls from Smart Campaign Ads`, the existing Primary direct-call action with a 30-second minimum duration. Google lists this asset as **Pending — Under review**. Direct calls from the Search ad will not be available for delivery or measurement until the asset is approved and eligible.
+On September 2, 2026, a campaign-level **Call asset** for `(941) 229-2355` was created and assigned to `Calls from Smart Campaign Ads`, the existing Primary direct-call action with a 30-second minimum duration. Google listed this asset as **Pending — Under review** at the last check. On September 29, the public number changed to `(941) 400-4496`; this former-number asset must be replaced or disassociated before any direct Search-ad call routing can be represented as current. Account-wide call reporting is currently off. Do not enable it or create a replacement asset without the requested separate approval.
 
 Google Ads indicates that campaign sitelinks are missing. That recommendation is noted for future optimization, but no new campaign-level sitelinks, callouts, structured snippets, or image assets were added in this build. The call asset above is the only newly added campaign-level asset. Do not apply broad-match, Display Expansion, Search Partners, or other automated recommendations without a separate review.
 

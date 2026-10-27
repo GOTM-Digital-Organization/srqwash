@@ -59,10 +59,10 @@ describe("buildReviewObjects", () => {
 // ── buildLocalBusinessSchema ──────────────────────────────────────────────────
 
 describe("buildLocalBusinessSchema", () => {
-  it("returns a valid @context and @type", () => {
+  it("returns a valid home-services business @context and @type", () => {
     const schema = buildLocalBusinessSchema() as any;
     expect(schema["@context"]).toBe("https://schema.org");
-    expect(schema["@type"]).toContain("LocalBusiness");
+    expect(schema["@type"]).toBe("HomeAndConstructionBusiness");
   });
 
   it("includes the business name", () => {
@@ -141,9 +141,9 @@ describe("buildServicePageSchema", () => {
     expect(service.provider["@id"]).toBe("https://srqwash.com/#business");
   });
 
-  it("second schema is a LocalBusiness", () => {
+  it("second schema is a home-services business", () => {
     const [, business] = buildServicePageSchema(input) as any[];
-    expect(business["@type"]).toContain("LocalBusiness");
+    expect(business["@type"]).toBe("HomeAndConstructionBusiness");
   });
 
   it("third schema is a BreadcrumbList with 3 items", () => {
@@ -181,9 +181,9 @@ describe("buildServiceAreaSchema", () => {
     expect(schemas).toHaveLength(2);
   });
 
-  it("first schema is a LocalBusiness", () => {
+  it("first schema is a home-services business", () => {
     const [business] = buildServiceAreaSchema(input) as any[];
-    expect(business["@type"]).toContain("LocalBusiness");
+    expect(business["@type"]).toBe("HomeAndConstructionBusiness");
   });
 
   it("areaServed is set to the city name", () => {
@@ -214,9 +214,9 @@ describe("buildNeighborhoodSchema", () => {
     expect(schemas).toHaveLength(2);
   });
 
-  it("first schema is a LocalBusiness", () => {
+  it("first schema is a home-services business", () => {
     const [business] = buildNeighborhoodSchema(input) as any[];
-    expect(business["@type"]).toContain("LocalBusiness");
+    expect(business["@type"]).toBe("HomeAndConstructionBusiness");
   });
 
   it("areaServed name includes neighborhood and parent city", () => {

@@ -28,3 +28,7 @@ A source audit found no remaining former-number reference in `client/` or `serve
 ## Safety rule
 
 Do **not** state that direct calls from Search ads route to `(941) 400-4496` until the replacement asset is created, associated only with campaign `24203417267`, and explicitly verified. This migration did not alter budget, campaign schedule, city targeting, Search Partners, or DNS/Netlify settings.
+
+## Current execution boundary
+
+On September 29, 2026, Tom instructed that this offer is for the Google Business Profile and that no further Google Ads actions should be taken. No account-wide call-reporting setting, call asset, campaign, conversion, budget, targeting, or other Google Ads setting will be changed unless Tom explicitly requests it in a later task.

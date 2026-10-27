@@ -7,7 +7,9 @@ const BASE_URL = "https://srqwash.com";
 // ── Shared business identity ──────────────────────────────────────────────────
 
 const BUSINESS_IDENTITY = {
-  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  // HomeAndConstructionBusiness is a LocalBusiness subtype and best reflects
+  // exterior building-cleaning services, rather than vehicle-wash services.
+  "@type": "HomeAndConstructionBusiness",
   "@id": `${BASE_URL}/#business`,
   name: "SRQ Wash",
   url: BASE_URL,
@@ -81,14 +83,14 @@ export function buildReviewObjects(testimonials: TestimonialInput[]) {
   }));
 }
 
-// ── Homepage / Contact — full LocalBusiness with embedded reviews ─────────────
+// ── Homepage / Contact — full home-services business with embedded reviews ────
 
 export function buildLocalBusinessSchema(testimonials?: TestimonialInput[]) {
   const base = {
     "@context": "https://schema.org",
     ...BUSINESS_IDENTITY,
     description:
-      "Professional pressure washing, soft wash roof cleaning, house washing, driveway cleaning, pool cage cleaning, and paver sealing in Lakewood Ranch, Sarasota, Bradenton, and Venice, FL.",
+      "Residential and commercial exterior building cleaning, including pressure washing, soft wash roof cleaning, house washing, driveway cleaning, pool cage cleaning, and paver sealing in Lakewood Ranch, Sarasota, Bradenton, and Venice, FL.",
     areaServed: [
       { "@type": "City", name: "Lakewood Ranch", containedInPlace: { "@type": "State", name: "Florida" } },
       { "@type": "City", name: "Sarasota",       containedInPlace: { "@type": "State", name: "Florida" } },
@@ -115,7 +117,7 @@ export function buildLocalBusinessSchema(testimonials?: TestimonialInput[]) {
   return base;
 }
 
-// ── Service page — LocalBusiness + Service + Breadcrumb ───────────────────────
+// ── Service page — home-services business + Service + Breadcrumb ──────────────
 
 export function buildServicePageSchema(service: {
   title: string;
@@ -212,7 +214,7 @@ export function buildRoofCleaningOfferSchema() {
   ];
 }
 
-// ── City service area page — LocalBusiness (areaServed=city) + Breadcrumb ─────
+// ── City service area page — home-services business (areaServed=city) + Breadcrumb
 
 export function buildServiceAreaSchema(area: {
   name: string;
@@ -226,7 +228,7 @@ export function buildServiceAreaSchema(area: {
     "@context": "https://schema.org",
     ...BUSINESS_IDENTITY,
     "@id": `${areaUrl}#business`,
-    description: `Professional pressure washing, roof cleaning, house washing, driveway cleaning, pool cage cleaning, and paver sealing in ${area.name}, ${area.state}. ${area.description}`,
+    description: `Professional exterior building cleaning, including pressure washing, roof cleaning, house washing, driveway cleaning, pool cage cleaning, and paver sealing in ${area.name}, ${area.state}. ${area.description}`,
     areaServed: {
       "@type": "City",
       name: area.name,
@@ -247,7 +249,7 @@ export function buildServiceAreaSchema(area: {
   return [businessSchema, breadcrumbSchema];
 }
 
-// ── Neighborhood page — LocalBusiness (areaServed=neighborhood) + Breadcrumb ──
+// ── Neighborhood page — home-services business (areaServed=neighborhood) + Breadcrumb
 
 export function buildNeighborhoodSchema(area: {
   name: string;
@@ -263,7 +265,7 @@ export function buildNeighborhoodSchema(area: {
     "@context": "https://schema.org",
     ...BUSINESS_IDENTITY,
     "@id": `${areaUrl}#business`,
-    description: `Professional pressure washing, roof cleaning, house washing, driveway cleaning, pool cage cleaning, and paver sealing in ${area.name}, ${area.parent}, ${area.state}. ${area.intro}`,
+    description: `Professional exterior building cleaning, including pressure washing, roof cleaning, house washing, driveway cleaning, pool cage cleaning, and paver sealing in ${area.name}, ${area.parent}, ${area.state}. ${area.intro}`,
     areaServed: {
       "@type": "Place",
       name: `${area.name}, ${area.parent}, FL`,

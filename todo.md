@@ -65,5 +65,5 @@
 - [x] Replace all website source phone displays, tel routes, structured data, email CTA, and Google forwarding-number tag configuration with `(941) 400-4496` / `9414004496`; the old-number search is clean across `client/` and `server/`
 - [x] Build and validate the public `$100 Off Soft Wash Roof Cleaning` landing page at `/100-off-soft-wash-roof-cleaning`, link it from the homepage, include Offer JSON-LD, and add it to the sitemap
 - [x] Prepare a GBP-ready before/after tile-roof image and reusable GBP post title, description, CTA, and landing-page link
-- [ ] Obtain explicit approval before enabling account-wide Google Ads call reporting and creating a campaign-only `(941) 400-4496` direct-call asset linked to the existing 30-second Calls from Ads action; remove/disassociate the former-number asset only after the replacement is verified
-- [ ] Read-only verify the Google Ads website-call conversion action displays/forwards to `(941) 400-4496`, campaign goals remain correct, and the campaign has no active former-number call asset
+- [-] Deferred by Tom on September 29, 2026 — do **not** make further Google Ads call-reporting, direct-call-asset, conversion, or campaign changes in this task. The user will handle Google Ads separately.
+- [-] Deferred by Tom on September 29, 2026 — do **not** perform additional Google Ads read-only verification in this task unless explicitly re-requested.

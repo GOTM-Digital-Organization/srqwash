@@ -273,10 +273,11 @@ function QuoteForm({ phone, phoneDisplay }: { phone: string; phoneDisplay: strin
               </div>
             </div>
             <div>
-              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Email Address (Optional)</label>
+              <label className="block text-slate-300 text-sm font-semibold mb-1.5">Email Address *</label>
               <input
                 type="email"
                 name="email"
+                required
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="john@example.com"
@@ -583,7 +584,13 @@ export default function PressureWashingLP() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <CallButton size="lg" label="Get Your Free Multi-Service Quote" />
+            <a
+              href="#quote-form"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-xl font-bold text-white shadow-lg shadow-orange-500/30 transition-all duration-150 hover:bg-orange-600 active:scale-95"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}
+            >
+              Get Your Free Multi-Service Quote
+            </a>
           </div>
         </div>
       </section>

@@ -63,7 +63,8 @@
 - [x] Diagnose srqwash.com DNS and public availability without modifying DNS, Netlify, or domain ownership unless explicitly approved — public DNS, TLS, apex, www redirect, Netlify endpoint, and browser rendering all returned successfully
 - [x] Verify public recovery and document the diagnosed availability issue — no global DNS or hosting outage reproduced; request the user’s browser error if the issue persists locally
 - [x] Replace all website source phone displays, tel routes, structured data, email CTA, and Google forwarding-number tag configuration with `(941) 400-4496` / `9414004496`; the old-number search is clean across `client/` and `server/`
-- [x] Build and validate the public `$100 Off Soft Wash Roof Cleaning` landing page at `/100-off-soft-wash-roof-cleaning`, link it from the homepage, include Offer JSON-LD, and add it to the sitemap
+- [x] Build and validate the public `$100 Off Soft Wash Roof Cleaning` landing page at `/100-off-soft-wash-roof-cleaning`, link it from the homepage, include Offer JSON-LD, and add it to the sitemap — retired October 29, 2026 at Tom's request; former URL now permanently redirects to `/roof-cleaning`
 - [x] Prepare a GBP-ready before/after tile-roof image and reusable GBP post title, description, CTA, and landing-page link
 - [-] Deferred by Tom on September 29, 2026 — do **not** make further Google Ads call-reporting, direct-call-asset, conversion, or campaign changes in this task. The user will handle Google Ads separately.
 - [-] Deferred by Tom on September 29, 2026 — do **not** perform additional Google Ads read-only verification in this task unless explicitly re-requested.
+- [x] Require visitor email on all remaining quote forms; use Gmail SMTP to deliver each request to `srqwash@gmail.com` plus a customer confirmation before reporting form success; verified the refreshed server-only Gmail credential without sending a test email

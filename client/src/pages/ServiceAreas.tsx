@@ -148,13 +148,12 @@ export default function ServiceAreas() {
                   We serve every community within Lakewood Ranch — from Waterside to Star Farms. Click any neighborhood for a dedicated service page.
                 </p>
               </div>
-              <a
-                href={`tel:${SITE.phoneCall}`}
+              <Link
+                href="/contact-us"
                 className="btn-orange flex-shrink-0"
               >
-                <Phone size={16} />
-                Get a Quote
-              </a>
+                Get a Quote Online
+              </Link>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {NEIGHBORHOOD_AREAS.filter((n) => n.parent === "Lakewood Ranch").map((n) => (

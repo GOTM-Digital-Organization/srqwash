@@ -24,7 +24,6 @@ import NotFound from "./pages/NotFound";
 import RoofCleaningLP from "./pages/RoofCleaningLP";
 import PressureWashingLP from "./pages/PressureWashingLP";
 import ThankYou from "./pages/ThankYou";
-import RoofCleaningOffer from "./pages/RoofCleaningOffer";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -32,9 +31,6 @@ function Router() {
       {/* Google Ads Landing Pages — no nav, conversion-only */}
       <Route path="/sarasota-roof-cleaning-lp" component={RoofCleaningLP} />
       <Route path="/lakewood-ranch-pressure-washing-lp" component={PressureWashingLP} />
-
-      {/* Public promotional landing page */}
-      <Route path="/100-off-soft-wash-roof-cleaning" component={RoofCleaningOffer} />
 
       {/* Thank You page — shown after form submission */}
       <Route path="/thank-you" component={ThankYou} />

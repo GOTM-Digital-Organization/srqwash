@@ -12,7 +12,7 @@ The approved website source migration is complete. The new number is used in:
 - `tel:` routes on shared pages and both Google Ads landing pages
 - LocalBusiness JSON-LD and the site-wide Google forwarding-number tag configuration
 - The Thank You page and the server email auto-reply CTA
-- The new `$100 Off Soft Wash Roof Cleaning` offer page
+- All active website quote forms and customer email confirmations
 
 A source audit found no remaining former-number reference in `client/` or `server/`.
 

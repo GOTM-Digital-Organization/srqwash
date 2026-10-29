@@ -9,19 +9,53 @@ export type ContactFormData = {
   message: string;
 };
 
+const QUOTE_NOTIFICATION_TO = "srqwash@gmail.com";
+const PUBLIC_PHONE_DISPLAY = "(941) 400-4496";
+const PUBLIC_PHONE_DIAL = "+19414004496";
+
 const SERVICE_LABELS: Record<string, string> = {
   "roof-cleaning": "Roof Cleaning",
   "house-washing": "Exterior House Washing",
   "driveway-cleaning": "Driveway & Concrete Cleaning",
   "pool-cage-cleaning": "Pool Cage & Lanai Cleaning",
   "paver-sealing": "Paver Sealing",
-  "multiple": "Multiple Services / Full Property",
-  "commercial": "Commercial Property",
-  "other": "Other",
+  multiple: "Multiple Services / Full Property",
+  commercial: "Commercial Property",
+  other: "Other",
 };
 
-function buildEmailHtml(data: ContactFormData): string {
-  const serviceLabel = SERVICE_LABELS[data.service] || data.service || "Not specified";
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function serviceLabelFor(data: ContactFormData): string {
+  return SERVICE_LABELS[data.service] || data.service || "Not specified";
+}
+
+function getTransporter() {
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailPass = process.env.GMAIL_APP_PASSWORD;
+
+  if (!gmailUser || !gmailPass) {
+    throw new Error("Gmail credentials are not configured for quote delivery.");
+  }
+
+  return {
+    gmailUser,
+    transporter: nodemailer.createTransport({
+      service: "gmail",
+      auth: { user: gmailUser, pass: gmailPass },
+    }),
+  };
+}
+
+function buildOwnerEmailHtml(data: ContactFormData): string {
+  const serviceLabel = serviceLabelFor(data);
   return `
 <!DOCTYPE html>
 <html>
@@ -46,7 +80,7 @@ function buildEmailHtml(data: ContactFormData): string {
   <div class="card">
     <div class="header">
       <h1>New Quote Request</h1>
-      <p>Submitted via srqwash.com contact form</p>
+      <p>Submitted via srqwash.com</p>
     </div>
     <div class="body">
       <div class="row">
@@ -75,17 +109,14 @@ function buildEmailHtml(data: ContactFormData): string {
         <div class="message-box">${escapeHtml(data.message)}</div>
       </div>` : ""}
     </div>
-    <div class="footer">
-      This message was sent from the SRQ Wash website contact form. Reply directly to this email to respond to the customer.
-    </div>
+    <div class="footer">This message was sent from the SRQ Wash website quote form. Reply directly to this email to respond to the customer.</div>
   </div>
 </body>
 </html>
   `.trim();
 }
 
-function buildEmailText(data: ContactFormData): string {
-  const serviceLabel = SERVICE_LABELS[data.service] || data.service || "Not specified";
+function buildOwnerEmailText(data: ContactFormData): string {
   return [
     "NEW QUOTE REQUEST — SRQ Wash",
     "================================",
@@ -93,48 +124,86 @@ function buildEmailText(data: ContactFormData): string {
     `Phone:   ${data.phone}`,
     `Email:   ${data.email}`,
     `Address: ${data.address || "Not provided"}`,
-    `Service: ${serviceLabel}`,
+    `Service: ${serviceLabelFor(data)}`,
     data.message ? `\nDetails:\n${data.message}` : "",
   ]
     .filter(Boolean)
     .join("\n");
 }
 
-function escapeHtml(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+function buildCustomerConfirmationHtml(data: ContactFormData): string {
+  const firstName = escapeHtml(data.name.split(/\s+/)[0] || "there");
+  const serviceLabel = escapeHtml(serviceLabelFor(data));
+  const address = data.address ? `<p style="color: #f8fafc; margin: 6px 0;"><strong>Property:</strong> ${escapeHtml(data.address)}</p>` : "";
+
+  return `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0f172a; color: #f8fafc; padding: 32px; border-radius: 12px;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h1 style="color: #f97316; font-size: 28px; margin: 0;">SRQ WASH</h1>
+        <p style="color: #94a3b8; margin: 4px 0 0;">Professional Exterior Cleaning</p>
+      </div>
+      <h2 style="color: #f8fafc; font-size: 22px; margin-bottom: 8px;">Thanks, ${firstName}! We received your quote request.</h2>
+      <p style="color: #cbd5e1; line-height: 1.6;">We will review your request and get back to you shortly, usually within a few hours during business hours.</p>
+      <div style="background: #1e293b; border-radius: 8px; padding: 20px; margin: 24px 0;">
+        <p style="color: #94a3b8; font-size: 14px; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">Your Request Summary</p>
+        ${address}
+        <p style="color: #f8fafc; margin: 6px 0;"><strong>Service:</strong> ${serviceLabel}</p>
+        <p style="color: #f8fafc; margin: 6px 0;"><strong>Phone:</strong> ${escapeHtml(data.phone)}</p>
+      </div>
+      <p style="color: #cbd5e1; line-height: 1.6;">Need a faster response? Call us directly:</p>
+      <a href="tel:${PUBLIC_PHONE_DIAL}" style="display: inline-block; background: #f97316; color: white; font-weight: bold; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-size: 16px; margin-bottom: 24px;">${PUBLIC_PHONE_DISPLAY}</a>
+      <hr style="border: none; border-top: 1px solid #334155; margin: 24px 0;" />
+      <p style="color: #64748b; font-size: 13px; text-align: center;">SRQ Wash · Lakewood Ranch, FL · Licensed &amp; Insured<br/>5.0 Stars · 48 Google Reviews</p>
+    </div>
+  `.trim();
+}
+
+function buildCustomerConfirmationText(data: ContactFormData): string {
+  return [
+    `Thanks, ${data.name.split(/\s+/)[0] || "there"}!`,
+    "",
+    "SRQ Wash received your quote request and will get back to you shortly.",
+    `Service: ${serviceLabelFor(data)}`,
+    `Phone: ${data.phone}`,
+    data.address ? `Property: ${data.address}` : "",
+    "",
+    `Need a faster response? Call ${PUBLIC_PHONE_DISPLAY}.`,
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
 /**
- * Sends a contact form submission to the business email via Gmail SMTP.
- * Requires GMAIL_USER and GMAIL_APP_PASSWORD environment variables.
+ * Verifies the server-only Gmail SMTP credentials without sending a message.
  */
-export async function sendContactEmail(data: ContactFormData): Promise<void> {
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailPass = process.env.GMAIL_APP_PASSWORD;
+export async function verifyQuoteEmailTransport(): Promise<true> {
+  const { transporter } = getTransporter();
+  await transporter.verify();
+  return true;
+}
 
-  if (!gmailUser || !gmailPass) {
-    throw new Error("Gmail credentials not configured (GMAIL_USER / GMAIL_APP_PASSWORD).");
-  }
-
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: gmailUser,
-      pass: gmailPass,
-    },
-  });
+/**
+ * Delivers the lead to SRQ Wash and sends the visitor a confirmation email.
+ * The caller must treat rejection as a failed quote submission so an Ads lead
+ * conversion is never recorded for a form that Gmail did not accept.
+ */
+export async function sendQuoteEmails(data: ContactFormData): Promise<void> {
+  const { gmailUser, transporter } = getTransporter();
 
   await transporter.sendMail({
     from: `"SRQ Wash Website" <${gmailUser}>`,
-    to: "srqwash@gmail.com",
+    to: QUOTE_NOTIFICATION_TO,
     replyTo: data.email,
     subject: `New Quote Request from ${data.name}`,
-    text: buildEmailText(data),
-    html: buildEmailHtml(data),
+    text: buildOwnerEmailText(data),
+    html: buildOwnerEmailHtml(data),
+  });
+
+  await transporter.sendMail({
+    from: `"SRQ Wash" <${gmailUser}>`,
+    to: data.email,
+    subject: "We received your quote request — SRQ Wash",
+    text: buildCustomerConfirmationText(data),
+    html: buildCustomerConfirmationHtml(data),
   });
 }

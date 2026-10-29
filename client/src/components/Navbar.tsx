@@ -117,13 +117,12 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-3">
-              <a
-                href={`tel:${SITE.phoneCall}`}
+              <Link
+                href="/contact-us"
                 className="btn-orange text-sm"
               >
-                <Phone size={15} />
-                Free Quote
-              </a>
+                Get a Quote Online
+              </Link>
             </div>
 
             {/* Mobile hamburger */}

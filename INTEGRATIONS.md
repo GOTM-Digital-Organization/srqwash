@@ -63,13 +63,17 @@ The completed replacement structure is Roof Cleaning, House Washing, Pool Cage &
 
 ## Netlify compatibility requirements
 
-The Netlify build depends on `client/public/_redirects` containing the SPA fallback rule:
+Quote requests are submitted through the production `trpc.contact.submit` endpoint. The server requires the visitor's email address, sends the owner notification to `srqwash@gmail.com`, then sends the visitor an automatic confirmation. A quote form succeeds—and the Google Ads lead event can fire—only after Gmail accepts both messages. The sender uses server-only `GMAIL_USER` and `GMAIL_APP_PASSWORD` credentials; never add either value to a Vite variable, source file, or Git commit. Validate any credential change with `pnpm exec vitest run server/email.test.ts` before release.
+
+The Netlify build depends on `client/public/_redirects` retaining the retired-offer 301 redirects followed by the SPA fallback rule:
 
 ```text
+ /100-off-soft-wash-roof-cleaning    /roof-cleaning    301
+ /100-off-soft-wash-roof-cleaning/   /roof-cleaning    301
 /*    /index.html   200
 ```
 
-Keep that file in place so direct visits to service, area, neighborhood, and Google Ads landing-page URLs resolve to the React application rather than returning a 404. The `client/public/images/` directory is also intentionally preserved because the current Netlify deployment uses those paths for the multi-service Google Ads landing page.
+Keep that file in place so former offer backlinks route permanently to roof cleaning and direct visits to service, area, neighborhood, and Google Ads landing-page URLs resolve to the React application rather than returning a 404. The `client/public/images/` directory is also intentionally preserved because the current Netlify deployment uses those paths for the multi-service Google Ads landing page.
 
 ## Safety rules
 

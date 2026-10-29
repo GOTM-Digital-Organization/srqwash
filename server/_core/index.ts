@@ -37,6 +37,12 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   registerStorageProxy(app);
   registerOAuthRoutes(app);
+  app.get("/100-off-soft-wash-roof-cleaning", (_req, res) => {
+    res.redirect(301, "/roof-cleaning");
+  });
+  app.get("/100-off-soft-wash-roof-cleaning/", (_req, res) => {
+    res.redirect(301, "/roof-cleaning");
+  });
   registerSitemapRoute(app);
   // tRPC API
   app.use(
